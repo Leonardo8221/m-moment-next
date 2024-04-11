@@ -32,7 +32,13 @@ const Footer = ({ items }: Ifooter) => {
         <div className="absolte left-[50%] translate-x-[-50%] t-[31px]">
           <Socials />
         </div>
+        <div className="flex gap-[10px] items-center">
+
         <p className={styles.designedBy}>Designed By</p>
+        <Link href={'mailto:pictagroup@gmail.com'} target="_blank">
+            <Image width={16} height={16} src={'/img/email-Icon.svg'} alt={'logo'} />
+          </Link>
+        </div>
       </div>
     </div>
   );
