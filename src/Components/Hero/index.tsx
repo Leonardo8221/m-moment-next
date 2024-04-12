@@ -7,6 +7,7 @@ import DropDwon from "@/Components/ui/DropDown";
 import { options } from "@/utils/constants";
 import styles from "./hero.module.css";
 import { Turnstile } from "@marsidev/react-turnstile";
+import QRCode from "react-qr-code";
 
 const Hero = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -14,6 +15,7 @@ const Hero = () => {
   const [selectedValue, setSelectedValue] = useState(options[0].label);
   const [isCopied, setIsCopied] = useState(false);
   const [secCode, setSecCode] = useState("");
+  const [flag, setFlag] = useState(false);
 
   const handleItemClick = (option: {
     value?: string;
@@ -128,6 +130,7 @@ const Hero = () => {
                   <button
                     className={`inline-flex items-center justify-center bg-white rounded-[5px] text-[#494af8] disabled:text-[#ccc] w-[50px] h-[50px]`}
                     disabled={randUrl ? false : true}
+                    onClick={() => setFlag(!flag)}
                   >
                     <MdOutlineQrCodeScanner fontSize={23} />
                   </button>
@@ -139,6 +142,16 @@ const Hero = () => {
                   >
                     <MdContentCopy fontSize={20} />
                   </button>
+                  {flag && <div className="absolute top-[-178px] right-[-27px] items-center justify-center max-maxTab:hidden">
+                    <div className="p-4 rounded-[20px] w-[full] bg-white bg-cover bg-no-repeat p-[10px] w-full" style={{ border: "8px solid black" }}>
+                      <QRCode
+                        size={256}
+                        style={{ height: "auto", maxWidth: "100%", width: "100%" }}
+                        value={randUrl}
+                        viewBox={`0 0 256 256`}
+                      />
+                    </div>
+                  </div>}
                 </div>
               </div>
               <div className="flex w-full items-center gap-[20px]">
