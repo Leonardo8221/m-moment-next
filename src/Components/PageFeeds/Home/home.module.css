@@ -1,0 +1,174 @@
+/* Converse Section Styles */
+.converseTitle {
+  flex-grow: 0;
+  margin: 0 0 20px;
+  font-family: DMSans;
+  font-size: 60px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.17;
+  letter-spacing: normal;
+  text-align: left;
+  color: #363c4f;
+}
+
+.converseDesc {
+  width: 538px;
+  font-family: JetBrainsMono;
+  font-size: 17px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: #363c4f;
+}
+
+/* Expree Section styles */
+.expressSection {
+  width: 100%;
+  height: 1150px;
+  padding: 70px 60px 75px 64px;
+  background-color: #494af8;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.expressSection h1 {
+  width: 934px;
+  margin: 0 0 50px;
+  font-family: DMSans;
+  font-size: 60px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.17;
+  letter-spacing: normal;
+  text-align: center;
+  color: #fff;
+}
+
+.expressSection p {
+  width: 930px;
+  font-family: JetBrainsMono;
+  font-size: 18px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: center;
+  color: #fff;
+}
+
+.expressSteps {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 75px;
+  margin-top: 56.2px;
+}
+
+.expressSteps .express_steps_item {
+  display: flex;
+  flex-direction: column;
+  width: 260px;
+  height: 242px;
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 61px 0 30px;
+  margin: 0;
+  position: relative;
+  box-sizing: border-box;
+  text-align: center;
+  align-items: center;
+  transition: width 0.3s ease-in-out, background 0.3s ease-in-out;
+}
+
+.expressSteps .express_steps_item .order {
+  position: absolute;
+  top: 16px;
+  left: 30px;
+  margin: 0;
+  font-family: DMSans;
+  font-size: 60px;
+  font-weight: bold;
+  color: rgba(255, 255, 255, 0.2);
+}
+
+.expressSteps .express_steps_item img {
+  margin: 0 0 20px;
+  width: 80px;
+  height: 80px;
+}
+
+.expressSteps .express_steps_item .step_order {
+  font-family: JetBrainsMono;
+  font-size: 13px;
+  font-weight: 500;
+  color: #fff;
+  margin: 0;
+}
+
+.expressSteps .express_steps_item .step_title {
+  font-family: DMSans;
+  font-size: 26px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.expressSteps .express_steps_item:hover {
+  width: 476px;
+  background: #fff;
+  padding: 61px 0 30px 30px;
+  text-align: left;
+  align-items: start;
+  transition: width 0.3s ease-in-out;
+}
+
+.expressSteps .express_steps_item:hover .order {
+  color: #494af8;
+}
+
+.expressSteps .express_steps_item:hover img {
+  margin-left: 60px;
+}
+
+.expressSteps .express_steps_item:hover .step_order {
+  color: #555;
+}
+
+.expressSteps .express_steps_item:hover .step_title {
+  color: #494af8;
+}
+
+/* Message Section styles */
+.messageTitle {
+  flex-grow: 0;
+  margin: 0 0 20px;
+  font-family: DMSans;
+  font-size: 60px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.17;
+  letter-spacing: normal;
+  text-align: left;
+  color: #363c4f;
+}
+
+.messageDesc {
+  width: 538px;
+  font-family: JetBrainsMono;
+  font-size: 17px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: #363c4f;
+}
