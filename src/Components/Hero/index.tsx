@@ -12,6 +12,7 @@ const Hero = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [randUrl, setRandUrl] = useState("");
   const [selectedValue, setSelectedValue] = useState(options[0].label);
+  const [isCopied, setIsCopied] = useState(false);
 
   const handleItemClick = (option: {
     value?: string;
@@ -20,6 +21,39 @@ const Hero = () => {
   }) => {
     setSelectedValue(option.label);
     setIsOpen(false);
+  };
+
+  const copyToClipboard = async () => {
+    try {
+      await navigator.clipboard.writeText(randUrl);
+      setIsCopied(true);
+      setTimeout(() => {
+        setIsCopied(false);
+      }, 2000); // Optional: Reset state after 2 seconds
+    } catch (err) {
+      console.error("Failed to copy text: ", err);
+    }
+  };
+
+  const generateRandomString = (length = 16) => {
+    const characters =
+      "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+    let result = "";
+    const charactersLength = characters.length;
+    for (let i = 0; i < length; i++) {
+      result += characters.charAt(Math.floor(Math.random() * charactersLength));
+    }
+    return result;
+  };
+
+  const generateRandomUrl = () => {
+    const base = "https://messagemoment.com";
+    const randomPath = generateRandomString();
+    return `${base}/${randomPath}`;
+  };
+
+  const handleGenLink = () => {
+    setRandUrl(generateRandomUrl());
   };
 
   return (
@@ -55,37 +89,40 @@ const Hero = () => {
                 </div>
                 <div className="flex gap-[5px]">
                   <button
-                    className={`inline-flex items-center justify-center bg-white/10 border ${
-                      randUrl
-                        ? "border-white text-white"
-                        : "border-white/20 text-white/20 "
-                    } rounded-[5px] w-[50px] h-[50px] `}
+                    className={`inline-flex items-center justify-center bg-white/10 border border-white text-white disabled:border-white/20 disabled:text-white/20 rounded-[5px] w-[50px] h-[50px] `}
+                    disabled={randUrl ? false : true}
+                    onClick={() => setRandUrl(generateRandomUrl())}
                   >
                     <BsArrowRepeat fontSize={26} />
                   </button>
                   <button
-                    className={`inline-flex items-center justify-center bg-white rounded-[5px] ${
-                      randUrl ? "text-[#494af8]" : "text-[#ccc]"
-                    } w-[50px] h-[50px]`}
+                    className={`inline-flex items-center justify-center bg-white rounded-[5px] text-[#494af8] disabled:text-[#ccc] w-[50px] h-[50px]`}
+                    disabled={randUrl ? false : true}
                   >
                     <MdOutlineQrCodeScanner fontSize={23} />
                   </button>
                   <button
-                    className={`inline-flex items-center justify-center bg-white rounded-[5px] ${
-                      randUrl ? "text-[#494af8]" : "text-[#ccc]"
-                    } w-[50px] h-[50px]`}
+                    title={isCopied ? "Link copied to clipboard" : "Copy Link"}
+                    className={`inline-flex items-center justify-center bg-white rounded-[5px] text-[#494af8] disabled:text-[#ccc] w-[50px] h-[50px]`}
+                    onClick={copyToClipboard}
+                    disabled={randUrl ? false : true}
                   >
                     <MdContentCopy fontSize={20} />
                   </button>
                 </div>
               </div>
               <div className="flex w-full items-center gap-[20px]">
-                <Turnstile siteKey="1x00000000000000000000AA" className="w-full" />
+                <Turnstile
+                  siteKey="1x00000000000000000000AA"
+                  className="w-full"
+                />
                 <button
                   type="button"
                   className="bg-white rounded-[6px] inline-flex items-center justify-center text-center font-[JetBrainsMono] text-[15px] text-[#ccc] w-full h-[65px]"
+                  onClick={handleGenLink}
+                  disabled={randUrl ? true : false}
                 >
-                  Generate link
+                  {randUrl ? "Open Chat" : "Generate link"}
                 </button>
               </div>
             </div>
