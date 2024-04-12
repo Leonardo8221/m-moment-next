@@ -1,0 +1,111 @@
+
+
+
+/* Discover Section styles */
+.discoverSection {
+  width: 100%;
+  height: 850px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 70px 170px 36px;
+  background-color: #363c4f;
+}
+
+.discoverSection h1 {
+  width: 934px;
+  margin: 0 0 40px;
+  font-family: DMSans;
+  font-size: 60px;
+  font-weight: bold;
+  text-align: center;
+  line-height: 1.17;
+  color: #fff;
+}
+
+.discoverSection h2 {
+  margin: 60px 0 40px;
+  font-family: DMSans;
+  font-size: 26px;
+  font-weight: bold;
+  text-align: center;
+  color: #fff;
+}
+
+.discoverSection p {
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  width: 100%;
+  padding: 20px 0 0;
+  font-family: DMSans;
+  font-size: 13px;
+  font-weight: 500;
+  text-align: center;
+  color: #fff;
+  margin: 0;
+}
+
+.discoverSection p sup {
+  font-size: 8px;
+}
+
+.discoverSection .devices {
+  display: flex;
+  gap: 48px;
+  margin-bottom: 59px;
+}
+.discoverSection .devices img {
+  margin: 0;
+}
+
+.discoverSection .discovers {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.discoverSection .discovers .discover_item {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 260px;
+  height: 242px;
+  flex-grow: 0;
+  padding: 71px 0 30px;
+  border-radius: 20px;
+  background-color: #fff;
+  align-items: center;
+}
+
+.discoverSection .discovers .discover_item img {
+  margin: 0 0 27px;
+  width: 80px;
+  height: 80px;
+}
+
+.discoverSection .discovers .discover_item span {
+  font-family: DMSans;
+  font-size: 26px;
+  font-weight: bold;
+  text-align: center;
+  color: #363c4f;
+}
+
+.discoverSection .discovers .discover_item .discover_item_icon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  gap: 5.4px;
+  align-items: center;
+}
+
+.discoverSection .discovers .discover_item .discover_item_icon img {
+  width: 50px;
+  height: 50px;
+  margin: 0;
+}
+
+.discoverSection .discovers .discover_item .discover_item_icon span {
+  color: #4db5ff !important;
+  font-size: 24px !important;
+}
