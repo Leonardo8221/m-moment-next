@@ -60,8 +60,10 @@ const Hero = () => {
   }
 
   const handleGenLink = () => {
-    setRandUrl(generateRandomUrl());
-    setSecCode(generateRandomSecCode());
+    if (!randUrl) {
+      setRandUrl(generateRandomUrl());
+      setSecCode(generateRandomSecCode());
+    }
   };
 
   const handleReGenLink = () => {
@@ -142,16 +144,25 @@ const Hero = () => {
                   >
                     <MdContentCopy fontSize={20} />
                   </button>
-                  {flag && <div className="absolute top-[-178px] right-[-27px] items-center justify-center max-maxTab:hidden">
-                    <div className="p-4 rounded-[20px] w-[full] bg-white bg-cover bg-no-repeat p-[10px] w-full" style={{ border: "8px solid black" }}>
-                      <QRCode
-                        size={256}
-                        style={{ height: "auto", maxWidth: "100%", width: "100%" }}
-                        value={randUrl}
-                        viewBox={`0 0 256 256`}
-                      />
+                  {flag && (
+                    <div className="absolute top-[-178px] right-[-27px] items-center justify-center max-maxTab:hidden">
+                      <div
+                        className="p-4 rounded-[20px] w-[full] bg-white bg-cover bg-no-repeat p-[10px] w-full"
+                        style={{ border: "8px solid black" }}
+                      >
+                        <QRCode
+                          size={256}
+                          style={{
+                            height: "auto",
+                            maxWidth: "100%",
+                            width: "100%",
+                          }}
+                          value={randUrl}
+                          viewBox={`0 0 256 256`}
+                        />
+                      </div>
                     </div>
-                  </div>}
+                  )}
                 </div>
               </div>
               <div className="flex w-full items-center gap-[20px]">
@@ -163,7 +174,6 @@ const Hero = () => {
                   type="button"
                   className="bg-white rounded-[6px] inline-flex items-center justify-center text-center font-[JetBrainsMono] text-[15px] text-[--blue] w-full h-[65px]"
                   onClick={handleGenLink}
-                  disabled={randUrl ? true : false}
                 >
                   {randUrl ? "Open Chat" : "Generate link"}
                 </button>
