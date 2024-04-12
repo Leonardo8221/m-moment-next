@@ -1,8 +1,8 @@
-import { useEffect, useRef, useState } from "react";
-
+import React, { useState } from "react";
 import { BsArrowRepeat } from "react-icons/bs";
 import { MdOutlineQrCodeScanner } from "react-icons/md";
 import { MdContentCopy } from "react-icons/md";
+import Image from "next/image";
 import DropDwon from "@/Components/ui/DropDown";
 import { options } from "@/utils/constants";
 import styles from "./hero.module.css";
@@ -13,6 +13,7 @@ const Hero = () => {
   const [randUrl, setRandUrl] = useState("");
   const [selectedValue, setSelectedValue] = useState(options[0].label);
   const [isCopied, setIsCopied] = useState(false);
+  const [secCode, setSecCode] = useState("");
 
   const handleItemClick = (option: {
     value?: string;
@@ -52,13 +53,19 @@ const Hero = () => {
     return `${base}/${randomPath}`;
   };
 
+  function generateRandomSecCode() {
+    return Math.floor(1000 + Math.random() * 9000).toString();
+  }
+
   const handleGenLink = () => {
     setRandUrl(generateRandomUrl());
+    setSecCode(generateRandomSecCode());
   };
 
   const handleReGenLink = () => {
     setRandUrl(generateRandomUrl());
-  }
+    setSecCode(generateRandomSecCode());
+  };
 
   return (
     <div className="bg-gradient-to-b from-[#494af8]/10 to-transparent p-[50px_60px]">
@@ -88,8 +95,27 @@ const Hero = () => {
                     type="text"
                     value={randUrl}
                     onChange={(e) => setRandUrl(e.target.value)}
-                    className="w-full h-[50px] rounded-r-[5px] text-[16px] font-[600] font-[JetBrainsMono] p-[15px_20px] outline-none  text-[#363c4f] border border-[#ddd]"
+                    className={`w-full h-[50px] ${
+                      selectedValue !== "Secure" && "rounded-r-[5px]"
+                    } text-[16px] font-[600] font-[JetBrainsMono] p-[15px_20px] outline-none  text-[#363c4f] border border-[#ddd]`}
                   />
+                  {selectedValue === "Secure" && (
+                    <div className="relative flex items-center">
+                      <Image
+                        width={12.19}
+                        height={16}
+                        src={"/img/icons/secure.svg"}
+                        alt="icon"
+                        className="absolute left-[21px] top-[50%] translate-y-[-50%]"
+                      />
+                      <input
+                        type="text"
+                        value={secCode}
+                        onChange={(e) => setSecCode(e.target.value)}
+                        className="flex items-center !pl-[41px] w-[220px] h-[50px] rounded-r-[5px] text-[16px] font-[600] font-[JetBrainsMono] p-[15px_20px] outline-none text-[#363c4f] border border-[#ddd]"
+                      />
+                    </div>
+                  )}
                 </div>
                 <div className="flex gap-[5px]">
                   <button
@@ -122,7 +148,7 @@ const Hero = () => {
                 />
                 <button
                   type="button"
-                  className="bg-white rounded-[6px] inline-flex items-center justify-center text-center font-[JetBrainsMono] text-[15px] text-[#ccc] w-full h-[65px]"
+                  className="bg-white rounded-[6px] inline-flex items-center justify-center text-center font-[JetBrainsMono] text-[15px] text-[--blue] w-full h-[65px]"
                   onClick={handleGenLink}
                   disabled={randUrl ? true : false}
                 >
