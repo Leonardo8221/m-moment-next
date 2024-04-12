@@ -6,6 +6,7 @@ import { MdContentCopy } from "react-icons/md";
 import DropDwon from "@/Components/ui/DropDown";
 import { options } from "@/utils/constants";
 import styles from "./hero.module.css";
+import { Turnstile } from '@marsidev/react-turnstile'
 
 const Hero = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -85,6 +86,7 @@ const Hero = () => {
                 </div>
               </div>
               <div className="flex w-full items-center gap-[20px]">
+                <Turnstile siteKey='1x00000000000000000000AA' />
                 <div
                   className="cf-turnstile"
                   data-sitekey="0x4AAAAAAAW7P_qqtQlzKpgw"
