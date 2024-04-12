@@ -4,12 +4,15 @@ import Link from "next/link";
 import styles from "./header.module.css";
 import Socials from "../Socials";
 import Button from "../ui/Button";
+import { useRouter } from "next/router";
 
 interface Iheader {
   items: InavItem[];
 }
 
 const Header = ({ items }: Iheader) => {
+  const router = useRouter();
+
   return (
     <div className="flex justify-between border-t-[5px] border-t-[--blue] p-[17px_60px] border-b border-b-black/5">
       <div className="flex gap-[50px]">
@@ -19,7 +22,16 @@ const Header = ({ items }: Iheader) => {
         <ul className="flex items-center gap-[30px]">
           {items.slice(0, 2).map((item) => (
             <li key={item.href} className={styles.nav}>
-              <Link href={item.href}>{item.title}</Link>
+              <Link
+                href={item.href}
+                className={`${
+                  router.pathname === item.href
+                    ? "text-[--blue]"
+                    : "text-[#000]"
+                }`}
+              >
+                {item.title}
+              </Link>
             </li>
           ))}
         </ul>
