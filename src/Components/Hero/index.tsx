@@ -73,13 +73,27 @@ const Hero = () => {
                   />
                 </div>
                 <div className="flex gap-[5px]">
-                  <button className="inline-flex text-[--light-grey] items-center justify-center bg-white/10 border border-white/20 rounded-[5px] text-white/20 w-[50px] h-[50px] ">
-                    <BsArrowRepeat fontSize={20} />
+                  <button
+                    className={`inline-flex items-center justify-center bg-white/10 border ${
+                      randUrl
+                        ? "border-white text-white"
+                        : "border-white/20 text-white/20 "
+                    } rounded-[5px] w-[50px] h-[50px] `}
+                  >
+                    <BsArrowRepeat fontSize={26} />
                   </button>
-                  <button className="inline-flex text-[--light-grey] items-center justify-center bg-white rounded-[5px] text-[#ccc] w-[50px] h-[50px]">
+                  <button
+                    className={`inline-flex items-center justify-center bg-white rounded-[5px] ${
+                      randUrl ? "text-[#494af8]" : "text-[#ccc]"
+                    } w-[50px] h-[50px]`}
+                  >
                     <MdOutlineQrCodeScanner fontSize={23} />
                   </button>
-                  <button className="inline-flex text-[--light-grey] items-center justify-center bg-white rounded-[5px] text-[#ccc] w-[50px] h-[50px]">
+                  <button
+                    className={`inline-flex items-center justify-center bg-white rounded-[5px] ${
+                      randUrl ? "text-[#494af8]" : "text-[#ccc]"
+                    } w-[50px] h-[50px]`}
+                  >
                     <MdContentCopy fontSize={20} />
                   </button>
                 </div>
