@@ -1,6 +1,7 @@
 import { InavItem } from "@/interface/nav";
 import Image from "next/image";
 import Link from "next/link";
+import { MdKeyboardArrowUp } from "react-icons/md";
 
 import styles from "./footer.module.css";
 import Socials from "../Socials";
@@ -9,8 +10,22 @@ interface Ifooter {
 }
 
 const Footer = ({ items }: Ifooter) => {
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth", // for smooth scrolling
+    });
+  };
+
   return (
-    <div className="w-full flex-col text-center pt-[40px] bg-gradient-to-b from-[#494af8]/10 to-transparent">
+    <div className="relative w-full flex-col text-center pt-[40px] bg-gradient-to-b from-[#494af8]/10 to-transparent">
+      <button
+        type="button"
+        className="cursor-pointer absolute w-[80px] h-[80px] flex items-center justify-center text-white text-[36px] font-[600] bg-[--blue] rounded-full border-[3px] border-white top-[-40px] right-[60px]"
+        onClick={scrollToTop}
+      >
+        <MdKeyboardArrowUp />
+      </button>
       <Image
         width={196.5}
         height={46}
@@ -33,10 +48,14 @@ const Footer = ({ items }: Ifooter) => {
           <Socials />
         </div>
         <div className="flex gap-[10px] items-center">
-
-        <p className={styles.designedBy}>Designed By</p>
-        <Link href={'mailto:pictagroup@gmail.com'} target="_blank">
-            <Image width={16} height={16} src={'/img/email-Icon.svg'} alt={'logo'} />
+          <p className={styles.designedBy}>Designed By</p>
+          <Link href={"mailto:pictagroup@gmail.com"} target="_blank">
+            <Image
+              width={16}
+              height={16}
+              src={"/img/email-Icon.svg"}
+              alt={"logo"}
+            />
           </Link>
         </div>
       </div>
