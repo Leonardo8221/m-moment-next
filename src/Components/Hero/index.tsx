@@ -6,15 +6,12 @@ import { MdContentCopy } from "react-icons/md";
 import DropDwon from "@/Components/ui/DropDown";
 import { options } from "@/utils/constants";
 import styles from "./hero.module.css";
-import { Turnstile } from '@marsidev/react-turnstile'
+import { Turnstile } from "@marsidev/react-turnstile";
 
 const Hero = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [randUrl, setRandUrl] = useState("");
   const [selectedValue, setSelectedValue] = useState(options[0].label);
-
-  const turnstileRef = useRef<HTMLDivElement>(null);
-  const [turnstileToken, setTurnstileToken] = useState<string>("");
 
   const handleItemClick = (option: {
     value?: string;
@@ -24,23 +21,6 @@ const Hero = () => {
     setSelectedValue(option.label);
     setIsOpen(false);
   };
-
-  useEffect(() => {
-    if (turnstileRef.current) {
-      turnstileRef.current.addEventListener("turnstile-rendered", function () {
-        setTurnstileToken((window as any).cfTurnstileResponse);
-      });
-    }
-  }, []);
-
-  // Use this useEffect to detect when the token changes and send it to your backend
-  useEffect(() => {
-    if (turnstileToken) {
-      // Post the token to the backend here
-      console.log("Token ready to be sent: ", turnstileToken);
-      // Add your fetch or axios call here to send the token to the backend
-    }
-  }, [turnstileToken]);
 
   return (
     <div className="bg-gradient-to-b from-[#494af8]/10 to-transparent p-[50px_60px]">
@@ -100,13 +80,7 @@ const Hero = () => {
                 </div>
               </div>
               <div className="flex w-full items-center gap-[20px]">
-                <Turnstile siteKey='1x00000000000000000000AA' />
-                <div
-                  className="cf-turnstile"
-                  data-sitekey="0x4AAAAAAAW7P_qqtQlzKpgw"
-                  data-theme="light"
-                  ref={turnstileRef}
-                ></div>
+                <Turnstile siteKey="1x00000000000000000000AA" className="w-full" />
                 <button
                   type="button"
                   className="bg-white rounded-[6px] inline-flex items-center justify-center text-center font-[JetBrainsMono] text-[15px] text-[#ccc] w-full h-[65px]"
