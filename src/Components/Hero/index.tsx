@@ -56,6 +56,10 @@ const Hero = () => {
     setRandUrl(generateRandomUrl());
   };
 
+  const handleReGenLink = () => {
+    setRandUrl(generateRandomUrl());
+  }
+
   return (
     <div className="bg-gradient-to-b from-[#494af8]/10 to-transparent p-[50px_60px]">
       <div className="w-full relative h-[700px] rounded-[20px] bg-[url('/img/AdobeStock_205129152.svg')] bg-cover">
@@ -91,7 +95,7 @@ const Hero = () => {
                   <button
                     className={`inline-flex items-center justify-center bg-white/10 border border-white text-white disabled:border-white/20 disabled:text-white/20 rounded-[5px] w-[50px] h-[50px] `}
                     disabled={randUrl ? false : true}
-                    onClick={() => setRandUrl(generateRandomUrl())}
+                    onClick={handleReGenLink}
                   >
                     <BsArrowRepeat fontSize={26} />
                   </button>
