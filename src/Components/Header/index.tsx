@@ -26,7 +26,12 @@ const Header = ({ items }: Iheader) => {
       </div>
       <div className="flex gap-[29.5px] items-center">
         <Socials />
-        <button className="inline-flex items-center justify-center bg-[--blue] rounded-[6px] text-white w-[150px] h-[46px] hover:opacity-4" type="button" >Start</button>
+        <button
+          className="inline-flex items-center justify-center bg-[--blue] rounded-[6px] text-white w-[150px] h-[46px] hover:opacity-4"
+          type="button"
+        >
+          Start
+        </button>
       </div>
     </div>
   );

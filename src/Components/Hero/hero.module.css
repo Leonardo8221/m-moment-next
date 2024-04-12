@@ -1,0 +1,44 @@
+.overlay::after {
+    content: "";
+    width: inherit;
+    height: inherit;
+    position: absolute;
+    inset: 0; /* shorthand for top: 0, right: 0, bottom: 0, left: 0 */
+    background-color: rgba(0, 0, 0, 0.05);
+    z-index: 10;
+    border-radius: inherit; /* To maintain the parent's border radius */
+  }
+  
+  .heroTitle {
+      width: 647px;
+      font-family: DMSans;
+      font-size: 80px;
+      font-weight: bold;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1;
+      letter-spacing: -2px;
+      text-align: center;
+      color: #fff;
+      position: absolute;
+      top: 240px;
+      left: 50%;
+      transform: translateX(-50%);
+  }
+  
+  .heroDesc {
+      width: 562px;
+      font-family: JetBrainsMono;
+      font-size: 20px;
+      font-weight: 500;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: normal;
+      letter-spacing: normal;
+      text-align: center;
+      color: #fff;
+      position: absolute;
+      top: 420px;
+      left: 50%;
+      transform: translateX(-50%);
+  }
