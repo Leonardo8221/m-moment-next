@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@marsidev/react-turnstile": "^0.5.4",
     "classnames": "^2.5.1",
     "next": "14.1.4",
     "react": "^18",
