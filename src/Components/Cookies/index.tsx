@@ -42,7 +42,7 @@ const Cookies=()=> {
             We use cookies !
           </p>
           <p className="font-normal text-[15px] font-[JetBrainsMono] leading-7 mb-[30px]">
-            Hii This Website uses essential cookies to ensure it's proper
+            Hii This Website uses essential cookies to ensure it&rsquo;s proper
             operation and tracking cookies to understand how you may interact
             with it. The latter will be set only after consent.
             <span
