@@ -1,4 +1,10 @@
 import { privacies } from "@/utils/constants";
+import dynamic from "next/dynamic";
+// Use dynamic imports to load the MarkdownPreview asynchronously
+const MarkdownPreview = dynamic(
+  () => import("@uiw/react-markdown-preview").then((mod) => mod.default),
+  { ssr: false } // This option disables server-side rendering if needed
+);
 
 const Privacy = () => {
   return (
@@ -12,8 +18,24 @@ const Privacy = () => {
       <div className="w-full flex flex-col gap-[36px]">
         {privacies.map((privacy, index) => (
           <div className="flex flex-col" key={index}>
-            <h1 className="font-[DMSans] mb-[30px] text-3xl font-bold leading-normal tracking-normal text-justify text-[--blue]">{privacy.title}</h1>
-            <p className="font-[JetBrainsMono] text-base leading-6 tracking-normal text-justify text-[--dark]">{privacy.desc}</p>
+            <h1 className="font-[DMSans] mb-[30px] text-3xl font-bold leading-normal tracking-normal text-justify text-[--blue]">
+              {privacy.title}
+            </h1>
+            <MarkdownPreview
+              source={privacy.desc}
+              style={{
+                background: "none",
+                fontFamily: "JetBrainsMono",
+                fontSize: "15px",
+                fontWeight: "normal",
+                fontStretch: "normal",
+                fontStyle: "normal",
+                lineHeight: "1.53",
+                letterSpacing: "normal",
+                textAlign: "justify",
+                color: "#363c4f",
+              }}
+            />
           </div>
         ))}
       </div>

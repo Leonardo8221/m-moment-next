@@ -1,11 +1,11 @@
 import Layout from "@/Components/layout";
-import Privacy from "@/Components/PageFeeds/Privacy";
+import Terms from "@/Components/PageFeeds/Terms";
 import "../app/globals.css";
 
-export default function PrivacyPage() {
+export default function TermsPage() {
   return (
     <Layout>
-      <Privacy />
+      <Terms />
     </Layout>
   );
 }
