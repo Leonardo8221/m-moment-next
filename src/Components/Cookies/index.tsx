@@ -32,12 +32,12 @@ export default function Cookies() {
           </p>
 
           <p className="text-sm font-normal text-pretty leading-5 py-2">
-            Hii This Website uses essential cookies to ensure it's proper
+            Hii This Website uses essential cookies to ensure it&rsquo;s proper
             operation and tracking cookies to understand how you may interact
             with it. The latter will be set only after consent.
-            <p className="underline text-black font-medium pb-2">
+            <span className="underline text-black font-medium pb-2">
               Let me choose
-            </p>
+            </span>
           </p>
           <div className="flex items-center justify-center gap-4 w-full px-2">
             <button className="bg-indigo-600 py-2 px-4 rounded-md text-white">
