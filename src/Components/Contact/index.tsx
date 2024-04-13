@@ -1,7 +1,7 @@
-import React from "react";
+import React, { memo } from "react";
 import Link from "next/link";
 
-function Contact() {
+const Contact=()=> {
   return (
     <div className="bg-gray-100 w-full h-full m-3 flex flex-col justify-center items-center gap-3">
       <div className="w-full flex flex-col justify-center items-center gap-3 p-4">
@@ -83,4 +83,4 @@ function Contact() {
   );
 }
 
-export default Contact;
+export default memo(Contact);
