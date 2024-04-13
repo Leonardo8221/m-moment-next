@@ -12,6 +12,7 @@ const cookie = [
 ];
 
 const Modal = ({ onClose }) => {
+
   const [expandedIndex, setExpandedIndex] = useState(null);
   const [toggleStates, setToggleStates] = useState(cookie.map(() => false));
 
@@ -20,9 +21,11 @@ const Modal = ({ onClose }) => {
     newToggleStates[index] = !newToggleStates[index];
     setToggleStates(newToggleStates);
   };
+
   const handleToggleExpand = (index) => {
     setExpandedIndex(index === expandedIndex ? null : index);
   };
+  
   return (
     <div className="w-full p-5 bg-white cursor-pointer h-full">
       <div className="relative -top-8 -left-6">
