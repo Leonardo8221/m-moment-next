@@ -142,11 +142,15 @@ const Hero = () => {
                     <span className={styles.tooltip_text}>Regenerate</span>
                   </button>
                   <button
-                    className={`inline-flex items-center justify-center bg-white rounded-[5px] text-[#494af8] disabled:text-[#ccc] w-[50px] h-[50px]`}
+                    className={classNames(
+                      `inline-flex items-center justify-center bg-white rounded-[5px] text-[#494af8] disabled:text-[#ccc] w-[50px] h-[50px]`,
+                      styles.tooltip
+                    )}
                     disabled={randUrl ? false : true}
                     onClick={() => setFlag(!flag)}
                   >
                     <MdOutlineQrCodeScanner fontSize={23} />
+                    <span className={styles.tooltip_text}>Scan QR code</span>
                   </button>
                   <button
                     title={isCopied ? "Link copied to clipboard" : "Copy Link"}
