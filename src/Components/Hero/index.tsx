@@ -8,6 +8,8 @@ import { options } from "@/utils/constants";
 import styles from "./hero.module.css";
 import { Turnstile } from "@marsidev/react-turnstile";
 import QRCode from "react-qr-code";
+import classNames from "classnames";
+import Tooltip from "../ui/ToolTip";
 
 const Hero = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -79,7 +81,10 @@ const Hero = () => {
           A reliable and trustworthy platform for discreet conversations between
           known parties
         </p>
-        <div className="absolute top-[512px] left-[50%] translate-x-[-50%] flex flex-col w-[1096px] h-[300px] rounded-[20px] bg-[--blue]" id="urlGenerator">
+        <div
+          className="absolute top-[512px] left-[50%] translate-x-[-50%] flex flex-col w-[1096px] h-[300px] rounded-[20px] bg-[--blue]"
+          id="urlGenerator"
+        >
           <p className="text-center h-[80px] py-[28px] font-[DMSans] text-white text-[17px] m-0">
             Click the button below to receive your random link that you can
             share with your friends any way you like!
@@ -123,11 +128,18 @@ const Hero = () => {
                 </div>
                 <div className="flex gap-[5px]">
                   <button
-                    className={`inline-flex items-center justify-center bg-white/10 border border-white text-white disabled:border-white/20 disabled:text-white/20 rounded-[5px] w-[50px] h-[50px] `}
+                    className={classNames(
+                      `inline-flex items-center justify-center bg-white/10 border border-white text-white disabled:border-white/20 disabled:text-white/20 rounded-[5px] w-[50px] h-[50px] ${
+                        randUrl ? "" : "disabled"
+                      }`,
+                      styles.tooltip
+                    )}
                     disabled={randUrl ? false : true}
                     onClick={handleReGenLink}
+                    data-tooltip="Regenerate the link"
                   >
                     <BsArrowRepeat fontSize={26} />
+                    <span className={styles.tooltip_text}>Regenerate</span>
                   </button>
                   <button
                     className={`inline-flex items-center justify-center bg-white rounded-[5px] text-[#494af8] disabled:text-[#ccc] w-[50px] h-[50px]`}
@@ -138,17 +150,32 @@ const Hero = () => {
                   </button>
                   <button
                     title={isCopied ? "Link copied to clipboard" : "Copy Link"}
-                    className={`inline-flex items-center justify-center bg-white rounded-[5px] text-[#494af8] disabled:text-[#ccc] w-[50px] h-[50px]`}
+                    className={classNames(
+                      `inline-flex items-center justify-center bg-white rounded-[5px] text-[#494af8] disabled:text-[#ccc] w-[50px] h-[50px]`,
+                      styles.tooltip
+                    )}
                     onClick={copyToClipboard}
                     disabled={randUrl ? false : true}
                   >
                     <MdContentCopy fontSize={20} />
+
+                    <span className={styles.tooltip_text}>
+                      {isCopied ? "Link copied to clipboard" : "Copy URL"}
+                    </span>
                   </button>
                   {flag && (
-                    <div className="absolute top-[-178px] right-[-27px] items-center justify-center max-maxTab:hidden">
-                      <div
-                        className="rounded-[10px] w-[full] bg-white bg-cover bg-no-repeat p-[20px] w-full border-[10px] border-black"
-                      >
+                    <div className="absolute top-[-178px] right-[-30px] items-center justify-center max-maxTab:hidden">
+                      <div className="relative rounded-[10px] w-[full] bg-white bg-cover bg-no-repeat p-[20px] w-full border-[10px] border-black">
+                        <Image
+                          alt="tip"
+                          loading="lazy"
+                          width="6"
+                          height="5"
+                          decoding="async"
+                          data-nimg="1"
+                          className="absolute bottom-[-20px] left-[50%] translate-x-[-50%] w-[10px] h-[20px] transform rotate-180"
+                          src="/img/icons/message-tail.svg"
+                        />
                         <QRCode
                           size={220}
                           style={{

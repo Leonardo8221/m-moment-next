@@ -1,0 +1,40 @@
+.tooltip_text {
+  visibility: hidden;
+  width: auto; /* Adjust width as necessary */
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 8px 13px;
+
+  font-family: JetBrainsMono;
+  font-size: 14px;
+  font-weight: 500;
+  text-align: center;
+  color: #fff;
+  text-wrap: nowrap;
+
+  /* Position the tooltip above the button */
+  position: absolute;
+  z-index: 1;
+  bottom: 130%; /* Position it above the button */
+  left: 50%;
+  margin-bottom: 10px; /* Distance from the button */
+
+  /* Making tooltip appear with fade effect */
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.3s, transform 0.3s ease-in-out;
+}
+
+/* Tooltip arrow */
+.tooltip_text::after {
+  content: "";
+  position: absolute;
+  top: 100%; /* Position at the bottom of the tooltip content */
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: black transparent transparent transparent;
+}
