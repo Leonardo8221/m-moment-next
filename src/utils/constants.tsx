@@ -6,7 +6,7 @@ export const navItems = [
     title: "About",
   },
   {
-    href: "/help",
+    href: "/faqs",
     title: "Help & Support",
   },
   {

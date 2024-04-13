@@ -1,9 +1,12 @@
 "use client";
 import Image from "next/image";
-import React, { useEffect, useState } from "react";
+import Modal from "../Cookie modal";
+import React, { memo, useEffect, useState } from "react";
 
-export default function Cookies() {
+const Cookies=()=> {
   const [open, setOpen] = useState(true);
+  const [modalOpen, setModalOpen] = useState(false);
+
   useEffect(() => {
     setOpen(true);
   }, []);
@@ -12,10 +15,18 @@ export default function Cookies() {
     setOpen(false);
   };
 
+  const handleSpanClick = () => {
+    setModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setModalOpen(false);
+  };
+
   return (
     <>
-      {open ? (
-        <div className="w-96 p-3 bg-white h-[250px] cursor-pointer">
+      {open && !modalOpen && (
+        <div className="w-[440px] p-[30px] bg-white cursor-pointer">
           <div className="absolute -top-3 -left-2">
             <Image
               src={"/cookies_icon.svg"}
@@ -25,21 +36,22 @@ export default function Cookies() {
             />
           </div>
           <p className="text-end font-bold text-gray-400">
-            <button onClick={(e) => handleOnClick()}>X</button>
+            <button onClick={handleOnClick}>X</button>
           </p>
-          <p className="font-bold text-indigo-600 text-center pb-2">
+          <p className="font-[DMSans] text-[26px] text-[#494AF8] font-bold font-bold text-center mb-[17px]">
             We use cookies !
           </p>
-          <div className="flex-row">
-            <p className="text-[15px] font-[JetBrainsMono] leading-5 py-2">
-              Hi, this Website uses essential cookies to ensure it's proper
-              operation and tracking cookies to understand how you may interact
-              with it. The latter will be set only after consent.
-            </p>
-            <p className="underline text-black font-medium ">
+          <p className="font-normal text-[15px] font-[JetBrainsMono] leading-7 mb-[30px]">
+            Hii This Website uses essential cookies to ensure it's proper
+            operation and tracking cookies to understand how you may interact
+            with it. The latter will be set only after consent.
+            <span
+              className="underline text-black text-[15px] font-[JetBrainsMono] pb-2"
+              onClick={handleSpanClick}
+            >
               Let me choose
-            </p>
-          </div>
+            </span>
+          </p>
           <div className="flex items-center justify-center gap-4 w-full px-2">
             <button className="bg-indigo-600 py-2 px-4 rounded-md text-white">
               Accept all
@@ -49,7 +61,10 @@ export default function Cookies() {
             </button>
           </div>
         </div>
-      ) : null}
+      )}
+      {modalOpen && <Modal onClose={handleCloseModal} />}
     </>
   );
 }
+
+export default memo(Cookies)

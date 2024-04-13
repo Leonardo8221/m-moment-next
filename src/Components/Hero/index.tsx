@@ -192,7 +192,7 @@ const Hero = () => {
                 link with is above 16 years of age.
               </p>
             </div>
-            <div className="absolute z-[9999] top-[60px] text-black -right-[150px] rounded-md">
+            <div className="absolute z-[9999] top-[20px] text-black -right-[150px] rounded-md">
               <Cookies />
             </div>
           </div>
