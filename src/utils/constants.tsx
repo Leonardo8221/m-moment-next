@@ -110,3 +110,56 @@ export const privacies = [
     desc: "If you have any questions regarding this Privacy Policy, please Contact Us.",
   },
 ];
+
+export const faqsData = [
+  {
+    question: "What is MessageMoment",
+    answer:
+      "MessageMoment is a discreet chat service that enables known parties to communicate with each other through a unique chat link.",
+  },
+  {
+    question: "How do I use MessageMoment?",
+    answer:
+      "To use MessageMoment, simply open the chat link in your default or favorite browser. No account registration is necessary. The user will enter the chat session and gain visibility of the conversation only once they have entered their handle and token password (if applicable).",
+  },
+  {
+    question: "What is meant by “Secure”?",
+    answer:
+      "You can choose to make a chat session secure. This means that you will not only share the auto-generated unique chat link, but you will also share the auto-generated token password assigned for that chat session.",
+  },
+  {
+    question: "How do I share the chat details with others?",
+    answer:
+      "You can choose to use any other communications service to share and socialize the chat link with another party. This could be SMS, Email, a messaging service etc. We have provided you with a copy function allowing you to easily copy the unique chat link as well as the token password (if applicable).",
+  },
+  {
+    question: "Can I use MessageMoment on my mobile device?",
+    answer:
+      "Yes, MessageMoment has a mobile responsive design, so you can use the chat link on your mobile device through your default or favorite browser. There is no need for a native app.",
+  },
+  {
+    question: "Is there a limit to the number of users in a chat?",
+    answer:
+      "Yes, there is currently a limit of 10 users that can participate in a chat session.Yes, there is currently a limit of 10 users that can participate in a chat session.",
+  },
+  {
+    question: "How do I use MessageMoment?",
+    answer:
+      "To use MessageMoment, simply open the chat link in your default or favorite browser. No account registration is necessary. The user will enter the chat session and gain visibility of the conversation only once they have entered their handle and token password (if applicable).",
+  },
+  {
+    question: "How do I use MessageMoment?",
+    answer:
+      "To use MessageMoment, simply open the chat link in your default or favorite browser. No account registration is necessary. The user will enter the chat session and gain visibility of the conversation only once they have entered their handle and token password (if applicable).",
+  },
+  {
+    question: "How do I use MessageMoment?",
+    answer:
+      "To use MessageMoment, simply open the chat link in your default or favorite browser. No account registration is necessary. The user will enter the chat session and gain visibility of the conversation only once they have entered their handle and token password (if applicable).",
+  },
+  {
+    question: "How do I use MessageMoment?",
+    answer:
+      "To use MessageMoment, simply open the chat link in your default or favorite browser. No account registration is necessary. The user will enter the chat session and gain visibility of the conversation only once they have entered their handle and token password (if applicable).",
+  },
+];
