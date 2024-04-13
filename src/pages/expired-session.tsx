@@ -29,11 +29,11 @@ export default function ExpiredSession() {
               </h3>
               <Link
                 href={"https://messagemoment.com/5qjjc37f9sn"}
-                className="font-[JetBrainsMono] text-[15px] text-[--dark] text-center mb-[31px]"
+                className="font-[JetBrainsMono] font-normal text-[15px] text-[--dark] text-center mb-[31px]"
               >
                 https://messagemoment.com/5qjjc37f9sn
               </Link>
-              <p className="font-[JetBrainsMono] text-[15px] text-[--dark] text-center mb-[33px]">
+              <p className="font-[JetBrainsMono] font-normal text-[15px] text-[--dark] text-center mb-[33px]">
                 Return to the homepage to generate a new chat session.
               </p>
             </div>
