@@ -147,18 +147,17 @@ const Hero = () => {
                   {flag && (
                     <div className="absolute top-[-178px] right-[-27px] items-center justify-center max-maxTab:hidden">
                       <div
-                        className="p-4 rounded-[20px] w-[full] bg-white bg-cover bg-no-repeat p-[10px] w-full"
-                        style={{ border: "8px solid black" }}
+                        className="rounded-[10px] w-[full] bg-white bg-cover bg-no-repeat p-[20px] w-full border-[10px] border-black"
                       >
                         <QRCode
-                          size={256}
+                          size={220}
                           style={{
                             height: "auto",
                             maxWidth: "100%",
                             width: "100%",
                           }}
                           value={randUrl}
-                          viewBox={`0 0 256 256`}
+                          viewBox={`0 0 220 220`}
                         />
                       </div>
                     </div>
