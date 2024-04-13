@@ -15,21 +15,28 @@ const Header = ({ items }: Iheader) => {
   const navigateToHomeSection = () => {
     // If already on the homepage, just scroll to the specific div.
     if (router.pathname == '/') {
-      scrollToSection();
+      scrollToSectionWithOffset();
     } else {
       // If not, first navigate to the homepage then scroll.
-      router.push('/').then(() => scrollToSection());
+      router.push('/').then(() => scrollToSectionWithOffset());
     }
   };
 
-  const scrollToSection = () => {
-    // Replace 'your-div-id' with the actual ID of your target div.
+  const scrollToSectionWithOffset = () => {
     const element = document.getElementById('urlGenerator');
-    element?.scrollIntoView({ behavior: 'smooth' });
-  };
+    if (element) {
+        const elementPosition = element.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - 86;
+
+        window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+        });
+    }
+};
 
   return (
-    <div className="flex justify-between border-t-[5px] border-t-[--blue] p-[17px_60px] border-b border-b-black/5">
+    <div className="fixed top-0 max-w-[1440px] w-full z-50 bg-white flex justify-between border-t-[5px] border-t-[--blue] p-[17px_60px] border-b border-b-black/5">
       <div className="flex gap-[50px]">
         <Link href={"/"}>
           <Image width={196.5} height={46} src={"/img/Logo.svg"} alt="logo" />

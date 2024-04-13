@@ -9,9 +9,7 @@ interface Props {
 
 function Layout({ children }: Props) {
   return (
-    <div
-      style={{ display: "flex", flexDirection: "column", minHeight: "100vh" }}
-    >
+    <div className="flex flex-col min-h-[100vh] pt-[85px]">
       <Header items={navItems} />
       <div className="flex-1 w-full px-0">{children}</div>
       <Footer items={navItems} />
