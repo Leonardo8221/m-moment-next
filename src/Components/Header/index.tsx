@@ -3,7 +3,6 @@ import Image from "next/image";
 import Link from "next/link";
 import styles from "./header.module.css";
 import Socials from "../Socials";
-import Button from "../ui/Button";
 import { useRouter } from "next/router";
 
 interface Iheader {
@@ -12,6 +11,22 @@ interface Iheader {
 
 const Header = ({ items }: Iheader) => {
   const router = useRouter();
+
+  const navigateToHomeSection = () => {
+    // If already on the homepage, just scroll to the specific div.
+    if (router.pathname == '/') {
+      scrollToSection();
+    } else {
+      // If not, first navigate to the homepage then scroll.
+      router.push('/').then(() => scrollToSection());
+    }
+  };
+
+  const scrollToSection = () => {
+    // Replace 'your-div-id' with the actual ID of your target div.
+    const element = document.getElementById('urlGenerator');
+    element?.scrollIntoView({ behavior: 'smooth' });
+  };
 
   return (
     <div className="flex justify-between border-t-[5px] border-t-[--blue] p-[17px_60px] border-b border-b-black/5">
@@ -41,6 +56,7 @@ const Header = ({ items }: Iheader) => {
         <button
           className="inline-flex items-center justify-center bg-[--blue] rounded-[6px] text-white w-[150px] h-[46px] hover:opacity-4"
           type="button"
+          onClick={navigateToHomeSection}
         >
           Start
         </button>

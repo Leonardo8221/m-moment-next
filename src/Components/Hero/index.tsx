@@ -79,7 +79,7 @@ const Hero = () => {
           A reliable and trustworthy platform for discreet conversations between
           known parties
         </p>
-        <div className="absolute top-[512px] left-[50%] translate-x-[-50%] flex flex-col w-[1096px] h-[300px] rounded-[20px] bg-[--blue]">
+        <div className="absolute top-[512px] left-[50%] translate-x-[-50%] flex flex-col w-[1096px] h-[300px] rounded-[20px] bg-[--blue]" id="urlGenerator">
           <p className="text-center h-[80px] py-[28px] font-[DMSans] text-white text-[17px] m-0">
             Click the button below to receive your random link that you can
             share with your friends any way you like!
