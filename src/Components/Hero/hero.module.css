@@ -73,7 +73,6 @@
   position: absolute;
   z-index: 1;
   bottom: 130%; /* Position it above the button */
-  left: 50%;
   margin-bottom: 10px; /* Distance from the button */
 
   /* Making tooltip appear with fade effect */
