@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import Modal from "../Cookie modal";
+import Modal from "../CookieModal";
 import React, { memo, useEffect, useState } from "react";
 
 const Cookies=()=> {

@@ -6,23 +6,22 @@ import { IoIosArrowDown } from "react-icons/io";
 import { FaToggleOn, FaToggleOff } from "react-icons/fa";
 
 const cookie = [
-  { lable: "lable 1", expand: "exp1" },
-  { lable: "lable 2", expand: "exp2" },
-  { lable: "lable 3", expand: "exp3" },
+  { label: "label 1", expand: "exp1" },
+  { label: "label 2", expand: "exp2" },
+  { label: "label 3", expand: "exp3" },
 ];
 
-const Modal = ({ onClose }) => {
-
-  const [expandedIndex, setExpandedIndex] = useState(null);
+const Modal = ({ onClose }:any) => {
+  const [expandedIndex, setExpandedIndex] = useState<number |null>(null);
   const [toggleStates, setToggleStates] = useState(cookie.map(() => false));
 
-  const handleToggleClick = (index) => {
+  const handleToggleClick = (index:number) => {
     const newToggleStates = [...toggleStates];
     newToggleStates[index] = !newToggleStates[index];
     setToggleStates(newToggleStates);
   };
 
-  const handleToggleExpand = (index) => {
+  const handleToggleExpand = (index:number) => {
     setExpandedIndex(index === expandedIndex ? null : index);
   };
   
@@ -67,7 +66,7 @@ const Modal = ({ onClose }) => {
                       index === expandedIndex ? "rotate-180" : ""
                     }`}
                   />
-                  <p className="my-3">{item.lable}</p>
+                  <p className="my-3">{item.label}</p>
                 </div>
                 <div className="w-1/6 justify-end items-center">
                   <div>
