@@ -11,7 +11,7 @@ const About = () => {
         </p>
       </div>
       <div className="relative flex flex-col items-center w-full h-[600px] bg-gradient-to-b from-[#494af8]/10 to-transparent">
-        <div className="absolute flex items-center gap-[20px] top-[-121px] left-[170px]">
+        <div className="flex items-center gap-[20px] mt-[-121px]">
           <Image
             className="rounded-[20px]"
             width={260}
@@ -41,7 +41,7 @@ const About = () => {
             alt=""
           />
         </div>
-        <p className="mt-[171px] mb-[70px] w-[908px] font-[JetBrainsMono] text-[17px] text-[#363c4f] text-center">
+        <p className="mt-[50px] mb-[70px] w-[908px] font-[JetBrainsMono] text-[17px] text-[#363c4f] text-center">
           It is said that words cannot be unspoken, but they can be unwritten
           with MessageMoment’s in-the-moment chat service that guarantees your
           conversation is history. Start chatting now and experience the privacy
@@ -139,14 +139,14 @@ const About = () => {
             <br /> unparalleled user experience and are always <br />
             looking for ways to improve our services.
           </h1>
-          <p className="text-[17px] text-center font-[500] font-[JetBrainsMono] leading-5">
+          <p className="text-[17px] text-center font-[500] font-[JetBrainsMono] leading-5 mb-[80px]">
             If you have any questions, concerns, feedback or would like to
             <br />
             advertise with MessageMoment, please do not hesitate to{" "}
             <u>Contact Us.</u>
           </p>
-          <div className="flex flex-col items-center absolute bottom-[-262px] left-[110px]">
-            <div className="flex gap-[20px] mb-[50px]">
+          <div className="flex flex-col items-center">
+            <div className="flex justify-center items-center gap-[20px] mb-[50px]">
               <Image
                 width={260}
                 height={242}

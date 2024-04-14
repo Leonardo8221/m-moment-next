@@ -4,16 +4,13 @@ import Link from "next/link";
 import Image from "next/image";
 import { IoIosArrowDown } from "react-icons/io";
 import { FaToggleOn, FaToggleOff } from "react-icons/fa";
+import {CookieMap} from "@/utils/constants";
 
-const cookie = [
-  { label: "label 1", expand: "exp1" },
-  { label: "label 2", expand: "exp2" },
-  { label: "label 3", expand: "exp3" },
-];
+
 
 const Modal = ({ onClose }:any) => {
   const [expandedIndex, setExpandedIndex] = useState<number |null>(null);
-  const [toggleStates, setToggleStates] = useState(cookie.map(() => false));
+  const [toggleStates, setToggleStates] = useState(CookieMap.map(() => false));
 
   const handleToggleClick = (index:number) => {
     const newToggleStates = [...toggleStates];
@@ -47,14 +44,13 @@ const Modal = ({ onClose }:any) => {
         <div>
           <h1 className="text-indigo-600 text-xl">Cookie Usage</h1>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus
-            nobis accusantium, autem eum atque inventore temporibus nesciunt
-            praesentium placeat nihil numquam quasi voluptatibus. Rem voluptates
-            necessitatibus, molestiae minus facere odio?
+            We use cookies to ensure the basic functionalities of this website and to enhance your online experience.
+            You can choose for each category to opt-in/out whenever you want. For more details relative to cookies and
+            other sensitive data, please read the full Privacy Policy.
           </p>
         </div>
         <div>
-          {cookie.map((item, index) => (
+          {CookieMap.map((item, index) => (
             <div key={index} className="border border-gray-300 bg-gray-200">
               <div
                 className="flex items-center cursor-pointer"
