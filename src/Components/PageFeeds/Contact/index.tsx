@@ -61,7 +61,7 @@ const Contact = () => {
                 <input
                   type="text"
                   placeholder="Enter your first name"
-                  className={`p-[17px_20px] placeholder-[--dark]/30 w-full h-[60px] font-[JetBrainsMono] text-[15px] rounded-[6px] border border-black/10 ${errors.firstName?.message ? " border-b-red-500 placeholder:text-red-400":""}`}
+                  className={`p-[17px_20px] outline-none placeholder-[--dark]/30 w-full h-[60px] font-[JetBrainsMono] text-[15px] rounded-[6px] border border-black/10 ${errors.firstName?.message ? " border-b-red-500 placeholder:text-red-400":""}`}
                   {...register('firstName',{
                     required:'First name is required'
                   })

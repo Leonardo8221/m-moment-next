@@ -24,12 +24,12 @@ const Modal = ({ onClose }:any) => {
   
   return (
     <div className="w-full p-5 bg-white cursor-pointer h-full">
-      <div className="relative -top-8 -left-6">
+      <div className="relative -top-[40px] -left-[-40px]">
         <Image
           src={"/cookies_icon.svg"}
           alt={"cookies"}
-          height={150}
-          width={50}
+          height={80}
+          width={80}
         />
       </div>
       <div className="absolute top-2 right-3">
