@@ -185,3 +185,13 @@ export const CookieMap = [
   { label: "Performance and Analytics cookies", expand: "These cookies allow this website to remember the choices you have made in the past." },
   { label: "Advertisement and Targeting cookies", expand: "These cookies collect information about how you use this website, which pages you visited and which links you clicked on. All of the data is anonymized and cannot be used to identify you." },
 ];
+export const contactTopicOptions=[
+  {label:'General Query', value:'general-query'},
+  {label:'Support', value:'support'},
+  {label:'Feedback / Suggestions', value:'feedback'},
+  {label:'Data Privacy Concerns', value:'data-privacy'},
+  {label:'Legal Query', value:'legal-query'},
+  {label:'Advertising / Sponsorship Inquiries', value:'advertising'},
+  {label:'Press Inquiries', value:'press'},
+  {label:'Other Query', value:'other-query'},
+]

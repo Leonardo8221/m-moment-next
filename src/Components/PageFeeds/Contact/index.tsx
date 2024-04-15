@@ -1,15 +1,17 @@
+import {contactTopicOptions} from "@/utils/constants";
+
 'use-client';
 import React, {useState} from "react";
 import Link from "next/link";
 import { Turnstile } from "@marsidev/react-turnstile";
 import Image from "next/image";
-import {useForm} from "react-hook-form";
-
+import {Controller, useForm} from "react-hook-form";
+import Select from 'react-select'
 type ContactUseFormValues = {
   firstName: string;
   lastName: string;
   email: string;
-  topic: string;
+  topic: { label:string,value:string };
   query: string;
 
 }
@@ -25,8 +27,52 @@ const Contact = () => {
   const onSubmit=(data:ContactUseFormValues)=>{
     console.log('Form submitted',data)
   }
-  const handleRemainingWordCount=(text:string)=>{
-    setRemainingWordCount(1500-text.length)
+  const customStyles = {
+    option: (provided, state) => ({
+      ...provided,
+      borderBottom: '1px solid rgba(0 0 0 / 0.1)',
+      color:state.isFocused? '#494af8':'#363c4f',
+      fontFamily:'JetBrains Mono,monospace',
+      fontSize:'.9375rem',
+      padding: '1rem',
+      backgroundColor:'white',
+      cursor:'pointer',
+      border:'1'
+    }),
+    control: (provided) => ({
+      ...provided,
+      display:'flex',
+      padding:'1rem',
+      border:'1px solid rgba(0 0 0 / 0.1)',
+      borderBottom: errors.topic?.message && '1px solid red',
+      borderRadius:'6px',
+      fontSize: '.9375rem',
+      cursor: 'pointer',
+      boxShadow: 'none',
+      "&:hover": {
+        border: "1px solid rgba(0 0 0 / 0.1)",
+        boxShadow: "none"
+    }
+    }),
+    valueContainer: (provided) => ({
+      ...provided,
+      padding:0,
+      maxHeight:'26px',
+    }),
+    indicatorsContainer:(provided)=>({
+      ...provided,
+      maxHeight: '26px',
+    }),
+    indicatorSeparator:(provided)=>({
+      ...provided,
+      display: 'none'
+    }),
+    singleValue: (provided, state) => {
+      const opacity = state.isDisabled ? 0.5 : 1;
+      const transition = 'opacity 300ms';
+
+      return { ...provided, opacity, transition };
+    }
   }
   return (
     <>
@@ -100,14 +146,23 @@ const Contact = () => {
             </div>
             <div className="mb-4">
               <label className="block mb-[10px] text-lg">Select a topic*</label>
-              <input
-                type="text"
-                required
-                placeholder="Select"
-                className={`p-[17px_20px] outline-none placeholder-[--dark]/30 w-full h-[60px] text-[JetBrainsMono] text-[15px] rounded-[6px] border border-black/10 ${errors.topic?.message? "border-b-red-500 placeholder:text-red-400":'' } `}
+              <Controller
+                  control={control}
+
+                  render={({ field }) =>
+                      <Select
+                          {...field}
+                          styles={customStyles}
+                          classNamePrefix={'topicSelect'}
+                          placeholder={'Select a topic'}
+                          options={contactTopicOptions}
+                          className={'block mb-[10px] text-lg'}
+                      />}
+
                 {...register('topic',{
                   required:'Topic is required'
-                })}              />
+                })}
+                />
             </div>
             <div className="mb-4">
               <div className="flex items-center mb-[10px] justify-between">
