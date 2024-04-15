@@ -71,7 +71,7 @@
 
   /* Position the tooltip above the button */
   position: absolute;
-  z-index: 1;
+  z-index: 1000;
   bottom: 130%; /* Position it above the button */
   margin-bottom: 10px; /* Distance from the button */
 
