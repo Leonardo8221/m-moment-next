@@ -1,27 +1,65 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { IoIosArrowDown } from "react-icons/io";
 import { FaToggleOn, FaToggleOff } from "react-icons/fa";
-import {CookieMap} from "@/utils/constants";
+import { CookieMap } from "@/utils/constants";
+import { setCookie } from "cookies-next";
 
 
 
-const Modal = ({ onClose }:any) => {
-  const [expandedIndex, setExpandedIndex] = useState<number |null>(null);
+const Modal = ({ onClose, cookieName }: any) => {
+  const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
   const [toggleStates, setToggleStates] = useState(CookieMap.map(() => false));
 
-  const handleToggleClick = (index:number) => {
+  const handleToggleClick = (index: number) => {
     const newToggleStates = [...toggleStates];
     newToggleStates[index] = !newToggleStates[index];
     setToggleStates(newToggleStates);
   };
 
-  const handleToggleExpand = (index:number) => {
+  const handleToggleExpand = (index: number) => {
     setExpandedIndex(index === expandedIndex ? null : index);
   };
-  
+
+
+
+
+  const handleCookieSaveSettings = () => {
+    const selectedCookies = toggleStates
+      .map((state, index) => ({ ...CookieMap[index], enabled: state }))
+      .filter((cookie) => cookie.enabled);
+
+    localStorage.setItem(cookieName, JSON.stringify(selectedCookies));
+
+    setCookie(cookieName, 'true', { maxAge: 365 * 24 * 60 * 60 });
+
+    onClose();
+    
+  };
+
+
+  useEffect(() => {
+    const storedCookies = localStorage.getItem(cookieName);
+    if (storedCookies) {
+      const parsedCookies = JSON.parse(storedCookies);
+
+      const initialToggleStates = CookieMap.map((mapItem: any) => {
+        const matchedCookie = parsedCookies.find((cookie: any) => cookie.label === mapItem.label);
+        return matchedCookie ? matchedCookie.enabled : false; // Set toggle state based on matched cookie
+      });
+
+      setToggleStates(initialToggleStates);
+    } else {
+      setToggleStates(CookieMap.map(() => false));
+    }
+  }, [cookieName]);
+
+
+
+
+
   return (
     <div className="w-full p-5 bg-white cursor-pointer h-full">
       <div className="relative -top-[40px] -left-[-40px]">
@@ -58,9 +96,8 @@ const Modal = ({ onClose }:any) => {
               >
                 <div className=" flex w-5/6 items-center">
                   <IoIosArrowDown
-                    className={`text-blue-500 mr-2 transform ${
-                      index === expandedIndex ? "rotate-180" : ""
-                    }`}
+                    className={`text-blue-500 mr-2 transform ${index === expandedIndex ? "rotate-180" : ""
+                      }`}
                   />
                   <p className="my-3">{item.label}</p>
                 </div>
@@ -105,7 +142,7 @@ const Modal = ({ onClose }:any) => {
         <button className="bg-gray-200 py-2 px-4 rounded-md text-black">
           Reject all
         </button>
-        <button className="bg-gray-200 py-2 px-4 rounded-md text-black">
+        <button className="bg-gray-200 py-2 px-4 rounded-md text-black" onClick={handleCookieSaveSettings}>
           Save Settings
         </button>
       </div>
