@@ -14,26 +14,27 @@ const Header = ({ items }: Iheader) => {
 
   const navigateToHomeSection = () => {
     // If already on the homepage, just scroll to the specific div.
-    if (router.pathname == '/') {
+    if (router.pathname == "/") {
       scrollToSectionWithOffset();
     } else {
       // If not, first navigate to the homepage then scroll.
-      router.push('/').then(() => scrollToSectionWithOffset());
+      router.push("/").then(() => scrollToSectionWithOffset());
     }
   };
 
   const scrollToSectionWithOffset = () => {
-    const element = document.getElementById('urlGenerator');
+    const element = document.getElementById("urlGenerator");
+    const select = document.getElementById("selectList");
+    const qrCode = document.getElementById("qrCode");
     if (element) {
-        const elementPosition = element.getBoundingClientRect().top;
-        const offsetPosition = elementPosition + window.pageYOffset - 86;
-
-        window.scrollTo({
-            top: offsetPosition,
-            behavior: 'smooth'
-        });
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - 86;
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth",
+      });
     }
-};
+  };
 
   return (
     <div className="fixed top-0 w-full max-w-[1440px] z-50 bg-white flex justify-between border-t-[5px] border-t-[--blue] p-[17px_60px] border-b border-b-black/5">

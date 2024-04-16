@@ -31,7 +31,7 @@ const DropDwon = ({
         </span>
       </div>
       {isOpen && (
-        <div className={styles.dropdownMenu}>
+        <div className={styles.dropdownMenu} id="selectList">
           {options.map((option) => (
             <div
               className={styles.dropdownItem}

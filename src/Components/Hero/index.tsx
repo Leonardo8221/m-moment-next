@@ -11,6 +11,7 @@ import QRCode from "react-qr-code";
 import classNames from "classnames";
 import Tooltip from "../ui/ToolTip";
 import Cookies from "../Cookies";
+import Link from "next/link";
 
 const Hero = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -32,6 +33,8 @@ const Hero = () => {
   const copyToClipboard = async () => {
     try {
       await navigator.clipboard.writeText(randUrl);
+      setFlag(false);
+      setIsOpen(false);
       setIsCopied(true);
       setTimeout(() => {
         setIsCopied(false);
@@ -63,6 +66,7 @@ const Hero = () => {
   }
 
   const handleGenLink = () => {
+    setIsOpen(false);
     if (!randUrl) {
       setRandUrl(generateRandomUrl());
       setSecCode(generateRandomSecCode());
@@ -70,6 +74,7 @@ const Hero = () => {
   };
 
   const handleReGenLink = () => {
+    setIsOpen(false);
     setRandUrl(generateRandomUrl());
     setSecCode(generateRandomSecCode());
   };
@@ -169,7 +174,10 @@ const Hero = () => {
                     </span>
                   </button>
                   {flag && (
-                    <div className="absolute top-[-178px] z-10 right-[-30px] items-center justify-center max-maxTab:hidden">
+                    <div
+                      className="absolute top-[-178px] z-10 right-[-30px] items-center justify-center max-maxTab:hidden"
+                      id="qrCode"
+                    >
                       <div className="relative rounded-[10px] w-[full] bg-white bg-cover bg-no-repeat p-[20px] w-full border-[10px] border-black">
                         <Image
                           alt="tip"
@@ -206,13 +214,20 @@ const Hero = () => {
                   className="bg-white rounded-[6px] inline-flex items-center justify-center text-center font-[JetBrainsMono] text-[15px] text-[--blue] w-full h-[65px]"
                   onClick={handleGenLink}
                 >
-                  {randUrl ? "Open Chat" : "Generate link"}
+                  {randUrl ? "Open Chat" : "Generate Link"}
                 </button>
               </div>
               <p className="font-[DMSans] text-[13px] text-white text-center m-0">
-                By starting this chat session, you agree to our Terms of Use and
-                Privacy Policy, and that you and everybody you share the chat
-                link with is above 16 years of age.
+                By starting this chat session, you agree to our{" "}
+                <u>
+                  <Link href={"/terms"}>Terms of Use</Link>
+                </u>{" "}
+                and{" "}
+                <u>
+                  <Link href={"/privacy"}>Privacy Policy</Link>
+                </u>
+                , and that you and everybody you share the chat link with is
+                above 16 years of age.
               </p>
             </div>
           </div>

@@ -57,6 +57,11 @@ const ExpressSection = () => {
           <span className={styles.step_title}>End Session</span>
         </div>
       </div>
+      <p className="mt-20 mx-auto text-center font-JetBrainsMono text-lg font-medium text-white">
+        Start a chat session by clicking the &rdquo;Open Chat&rdquo; button on our site and
+        receive a link. Optionally, make the chat secure by generating a
+        security code.
+      </p>
     </div>
   );
 };
