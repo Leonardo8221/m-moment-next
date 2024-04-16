@@ -44,7 +44,7 @@ const Footer = ({ items }: Ifooter) => {
         <p className={styles.copyright}>
           Copyright © 2023 MessageMoment. All rights reserved.
         </p>
-        <div className="absolte left-[50%] translate-x-[-50%] t-[31px]">
+        <div className="absolute left-[50%] translate-x-[-50%] t-[31px]">
           <Socials />
         </div>
         <div className="flex gap-[10px] items-center">
