@@ -59,21 +59,23 @@
 
 .discoverSection .discovers {
   width: 100%;
-  display: flex;
-  justify-content: space-between;
+  max-width: 1220px;
+  /* display: flex;
+  justify-content: space-between; */
 }
 
 .discoverSection .discovers .discover_item {
-  display: flex;
+  display: flex !important;
   flex-direction: column;
   position: relative;
-  width: 260px;
+  width: 260px !important;
   height: 242px;
   flex-grow: 0;
   padding: 71px 0 30px;
   border-radius: 20px;
   background-color: #fff;
   align-items: center;
+  margin: auto;
 }
 
 .discoverSection .discovers .discover_item img {

@@ -11,8 +11,8 @@ const Home = () => {
       <Hero />
       <ConverseSection />
       <ExpressSection />
-      <DiscoverSection />
       <MessageSection />
+      <DiscoverSection />
     </div>
   );
 };

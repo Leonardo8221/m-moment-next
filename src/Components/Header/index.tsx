@@ -37,7 +37,7 @@ const Header = ({ items }: Iheader) => {
   };
 
   return (
-    <div className="fixed top-0 w-full max-w-[1440px] z-50 bg-white flex justify-between border-t-[5px] border-t-[--blue] p-[17px_60px] border-b border-b-black/5">
+    <div className="fixed top-0 w-full z-50 bg-white flex justify-between border-t-[5px] border-t-[--blue] p-[17px_60px] border-b border-b-black/5">
       <div className="flex gap-[50px]">
         <Link href={"/"}>
           <Image width={196.5} height={46} src={"/img/Logo.svg"} alt="logo" />
