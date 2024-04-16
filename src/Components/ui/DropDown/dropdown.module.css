@@ -19,6 +19,7 @@
   font-size: 17px;
   text-align: left;
   color: #363c4f;
+  border-right: 0;
 }
 
 .dropdownMenu {
@@ -33,23 +34,25 @@
   font-size: 17px;
   text-align: left;
   color: #363c4f;
+  border-radius: 0 0 5px 5px;
 }
 
 .dropdownItem:first-child {
   padding: 11px 31px 11px 13px;
   height: 46px;
-  border: solid 1px #ddd;
+  border: solid 1px #ddd0;
   border-top: none;
   display: flex;
   align-items: center;
   gap: 8px;
   cursor: pointer;
+  border-bottom-color: #ddd;
 }
 
 .dropdownItem:last-child {
   padding: 12px 31px 12px 15px;
   height: 46px;
-  border: solid 1px #ddd;
+  border: solid 1px #ddd0;
   border-top: none;
   display: flex;
   align-items: center;
