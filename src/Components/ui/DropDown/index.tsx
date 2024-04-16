@@ -1,5 +1,6 @@
 import { IoIosArrowUp, IoIosArrowDown } from "react-icons/io";
 import styles from "./dropdown.module.css";
+import { useEffect, useRef } from "react";
 interface IDropDwon {
   options: any[];
   setIsOpen: Function;
@@ -15,6 +16,20 @@ const DropDwon = ({
   selectedValue,
   handleItemClick,
 }: IDropDwon) => {
+
+  const dropdownRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    function handleOutsideClick(event) {
+      if (isOpen && !dropdownRef.current?.contains(event.target))
+        setIsOpen(false);
+    }
+    document.addEventListener("mousedown", handleOutsideClick);
+    return () => {
+      document.removeEventListener("mousedown", handleOutsideClick);
+    };
+  }, [isOpen]);
+  
   return (
     <div className="relative">
       <div onClick={() => setIsOpen(!isOpen)} className={`${styles.dropdownButton} ${isOpen ? styles.dropdownIsOpen : ''}`}>
@@ -31,7 +46,7 @@ const DropDwon = ({
         </span>
       </div>
       {isOpen && (
-        <div className={styles.dropdownMenu} id="selectList">
+        <div className={styles.dropdownMenu} ref={dropdownRef}>
           {options.map((option) => (
             <div
               className={styles.dropdownItem}

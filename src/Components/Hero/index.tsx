@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { BsArrowRepeat } from "react-icons/bs";
 import { MdOutlineQrCodeScanner } from "react-icons/md";
 import { MdContentCopy } from "react-icons/md";
@@ -20,6 +20,8 @@ const Hero = () => {
   const [isCopied, setIsCopied] = useState(false);
   const [secCode, setSecCode] = useState("");
   const [flag, setFlag] = useState(false);
+  const qrCodeRef = useRef<HTMLDivElement>(null);
+  const regenRef = useRef<HTMLButtonElement>(null);
 
   const handleItemClick = (option: {
     value?: string;
@@ -78,6 +80,18 @@ const Hero = () => {
     setRandUrl(generateRandomUrl());
     setSecCode(generateRandomSecCode());
   };
+
+  useEffect(() => {
+    function handleOutsideClick(event) {
+      if (flag && !qrCodeRef.current?.contains(event.target) && !regenRef.current?.contains(event.target))
+        setFlag(false);
+    }
+    document.addEventListener("mousedown", handleOutsideClick);
+    return () => {
+      document.removeEventListener("mousedown", handleOutsideClick);
+    };
+  }, [flag]);
+  
 
   return (
     <div className="bg-gradient-to-b from-[#494af8]/10 to-transparent p-[50px_60px]">
@@ -143,6 +157,7 @@ const Hero = () => {
                     disabled={randUrl ? false : true}
                     onClick={handleReGenLink}
                     data-tooltip="Regenerate the link"
+                    ref={regenRef}
                   >
                     <BsArrowRepeat fontSize={26} />
                     <span className={styles.tooltip_text}>Regenerate</span>
@@ -176,7 +191,8 @@ const Hero = () => {
                   {flag && (
                     <div
                       className="absolute top-[-178px] z-10 right-[-30px] items-center justify-center max-maxTab:hidden"
-                      id="qrCode"
+                      ref={qrCodeRef}
+                      
                     >
                       <div className="relative rounded-[10px] w-[full] bg-white bg-cover bg-no-repeat p-[20px] w-full border-[10px] border-black">
                         <Image
