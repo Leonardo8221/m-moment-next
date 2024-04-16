@@ -17,7 +17,7 @@ const DropDwon = ({
 }: IDropDwon) => {
   return (
     <div className="relative">
-      <div onClick={() => setIsOpen(!isOpen)} className={styles.dropdownButton}>
+      <div onClick={() => setIsOpen(!isOpen)} className={`${styles.dropdownButton} ${isOpen ? styles.dropdownIsOpen : ''}`}>
         <div className="flex items-center gap-[8px]">
           {options.find((opption) => opption.label == selectedValue)?.icon}
           {selectedValue}
