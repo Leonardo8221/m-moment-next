@@ -123,3 +123,40 @@
 .right_30{
   right: 30px;
 }
+
+
+.table_wrap { /* the table wrapper */
+	margin: 2em auto;
+}
+.table_grid { /* the table */
+	display: grid;
+	grid-template-rows: auto;
+	position: relative;
+	z-index: 1;
+	width: 100%;
+	overflow: auto;
+}
+
+.table_row { /* all table rows */
+  display: grid;
+  grid-template-columns: 100px 150px 150px auto;
+  /* grid-template-columns: 100px auto auto auto; */
+  font-weight: 500;
+  font-size: 13px;
+  font-family: JetBrainsMono;
+  color: rgba(54, 60, 79, 1);
+  opacity: 0.8;
+}
+.table_row > div { /* the individual cells */
+  padding: 10px 0;
+}
+.table_header { 
+  display: grid;
+  grid-template-columns: 100px 150px 150px auto;
+  font-size: 13px;
+  font-weight: 500;
+  padding: 10px 0;
+  font-family: JetBrainsMono;
+  color: rgba(54, 60, 79, 1);
+  border-bottom: 1px solid rgba(238, 238, 238, 1);
+}
