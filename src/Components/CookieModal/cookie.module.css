@@ -1,4 +1,4 @@
-.cookieModal{
+.cookieModal {
   top: 0;
   bottom: 0;
   left: 0;
@@ -6,45 +6,61 @@
   right: 0;
   z-index: 99;
   width: 690px;
-  height: calc(100vh - 100px);
+  height: 670px;
   border-radius: 10px;
   position: fixed;
 }
-.cookieModal::before{
+.cookieModal::before {
   content: "";
-    position: fixed;
-    width: 100vw;
-    height: 100vh;
-    left: 0;
-    top: 0;
-    background: #f1f1f1eb;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  left: 0;
+  top: 0;
+  background: #f1f1f1eb;
 }
-.cookieTitle{
+.cookieTitle {
   display: flex;
   align-items: end;
   padding-bottom: 20px;
-  border-bottom: 1px solid gainsboro;
+  border-bottom: 1px solid #eee;
   gap: 20px;
-  padding-left: 30px;
-  padding-right: 30px;
+  padding-left: 29px;
+  padding-right: 24px;
 }
-.cookieTitle p{
-  color: rgba(73, 74, 248, 1);
+.cookieTitle p {
+  font-family: DMSans;
+  font-size: 26px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: #494af8;
 }
-.accordions{
+.accordions {
   display: flex;
   gap: 10px;
   flex-direction: column;
 }
-.accorItems{
-  padding: 0px 20px;
-  background: rgba(250, 250, 250, 1);
-  border: solid 1px rgba(238, 238, 238, 1);
+.accorItems {
+  padding: 13px 20px;
+  background:#fafafa;
+  border: solid 1px #eee;
   border-radius: 5px;
+  font-family: JetBrainsMono;
+  font-size: 15px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.53;
+  letter-spacing: normal;
+  text-align: left;
+  color: #363c4f;
 }
-.accorItems p:not(.label){
-  padding-top: 10px;
-  padding-bottom: 15px;
+.accorItems .label {
+ margin: 0;
 }
 
 .infoSection {
@@ -54,7 +70,7 @@
   border: 1px solid #eee;
   border-radius: 5px;
   padding: 15px 20px 18px;
-  margin-top:30px;
+  margin-top: 30px;
 }
 
 .infoSection p {
@@ -66,14 +82,43 @@
   overflow-y: auto;
   height: 500px;
 }
-.modalFooter{
-  padding: 0 30px;
+
+.modalBody::-webkit-scrollbar {
+  width: 6px;
 }
-.modalFooter button{
+
+.modalBody h1 {
+  font-family: DMSans;
+  font-size: 17px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.41;
+  letter-spacing: normal;
+  text-align: left;
+  color: #494af8;
+  font-weight: 500;
+}
+
+.modalBody p {
+  margin: 10px 0 18px 0;
+  font-family: JetBrainsMono;
+  font-size: 15px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.53;
+  letter-spacing: normal;
+  text-align: left;
+  color: #363c4f;
+  font-weight: 500;
+}
+
+.modalFooter {
+  padding: 20px 30px 29px 30px;
+  border-top: solid 1px rgba(0, 0, 0, 0.1);
+}
+.modalFooter button {
   width: 180px;
   height: 46px;
 }
-.right_30{
-  right: 30px;
-}
-
