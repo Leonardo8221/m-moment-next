@@ -103,7 +103,7 @@ const Modal = ({ onClose, cookieName }: any) => {
               >
                 <div className=" flex w-5/6 items-center">
                   <IoIosArrowDown
-                    className={`text-blue-500 mr-2 transform ${index === expandedIndex ? "rotate-180" : ""
+                    className={`mr-2 transform ${index === expandedIndex ? "" : "rotate--90"
                       }`}
                   />
                   <p className={`my-3 ${styles.label}`}>{item.label}</p>
