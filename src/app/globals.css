@@ -256,3 +256,12 @@ body {
 .rotate--90{
   transform: rotate(-90deg);
 }
+.contacUS-form input::placeholder,
+textarea::placeholder {
+  font-family: JetBrainsMono;
+}
+.contacUS-form .border-b-red-500{
+  border-bottom: 2px solid rgba(235, 87, 87, 1);
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
