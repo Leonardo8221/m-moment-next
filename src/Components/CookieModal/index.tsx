@@ -54,7 +54,8 @@ const Modal = ({ onClose, cookieName }: any) => {
 
   return (
     <div className={`w-[690px] h-[670x] ${styles.cookieModal}`}>
-      <div className="p-5 px-0 rounded-[10px] h-full bg-white cursor-pointer relative">
+      <div className='clickable-overlay' onClick={onClose}></div>
+      <div className='p-5 px-0 rounded-[10px] h-full bg-white cursor-pointer relative'>
         <div className={`relative -top-[40px] ${styles.cookieTitle}`}>
           <Image
             src={"/cookies_icon.svg"}
