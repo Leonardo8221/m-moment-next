@@ -60,7 +60,7 @@ const Contact = () => {
     }),
     indicatorsContainer: (provided) => ({
       ...provided,
-      maxHeight: '26px',
+      maxHeight: "26px",
     }),
     indicatorSeparator: (provided) => ({
       ...provided,
