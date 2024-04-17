@@ -37,6 +37,7 @@ const Contact = () => {
       backgroundColor: 'white',
       cursor: 'pointer',
       border: '1',
+      display:'flex'
     }),
     control: (provided) => ({
       ...provided,
@@ -57,6 +58,8 @@ const Contact = () => {
       ...provided,
       padding: 0,
       maxHeight: '26px',
+      display:'flex',
+      alignItems:'self-start'
     }),
     indicatorsContainer: (provided) => ({
       ...provided,
@@ -152,7 +155,7 @@ const Contact = () => {
                     {...field}
                     styles={customStyles}
                     classNamePrefix={'topicSelect'}
-                    placeholder={'Select a topic'}
+                    placeholder={'Select'}
                     options={contactTopicOptions}
                     className={'block mb-[10px] text-lg'}
                   />
@@ -170,7 +173,7 @@ const Contact = () => {
                     remainingWordCount < 10 ? 'text-red-500 opacity-100' : ''
                   }`}
                 >
-                  {remainingWordCount} characters remaining
+                  {remainingWordCount} characters left
                 </p>
               </div>
               <textarea
