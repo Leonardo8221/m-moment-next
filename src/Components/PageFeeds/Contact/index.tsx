@@ -1,79 +1,77 @@
-import {contactTopicOptions} from "@/utils/constants";
+import { contactTopicOptions } from "@/utils/constants";
 
-'use-client';
-import React, {useState} from "react";
+("use-client");
+import React, { useState } from "react";
 import Link from "next/link";
 import { Turnstile } from "@marsidev/react-turnstile";
 import Image from "next/image";
-import {Controller, useForm} from "react-hook-form";
-import Select from 'react-select'
+import { Controller, useForm } from "react-hook-form";
+import Select from "react-select";
 type ContactUseFormValues = {
   firstName: string;
   lastName: string;
   email: string;
-  topic: { label:string,value:string };
+  topic: { label: string; value: string };
   query: string;
-
-}
+};
 const Contact = () => {
-
-  const formObject=useForm<ContactUseFormValues>({
-    mode:'onBlur'
+  const formObject = useForm<ContactUseFormValues>({
+    mode: "onBlur",
   });
-  const {register,control, handleSubmit,formState}= formObject;
-  const {errors,isValid}=formState;
-  const [remainingWordCount,setRemainingWordCount]=useState<number>(1500);
+  const { register, control, handleSubmit, formState } = formObject;
+  const { errors, isValid } = formState;
+  const [remainingWordCount, setRemainingWordCount] = useState<number>(1500);
 
-  const onSubmit=(data:ContactUseFormValues)=>{
-    console.log('Form submitted',data)
-  }
+  const onSubmit = (data: ContactUseFormValues) => {
+    console.log("Form submitted", data);
+  };
   const customStyles = {
     option: (provided, state) => ({
       ...provided,
-      borderBottom: '1px solid rgba(0 0 0 / 0.1)',
-      color:state.isFocused? '#494af8':'#363c4f',
-      fontFamily:'JetBrains Mono,monospace',
-      fontSize:'.9375rem',
-      padding: '1rem',
-      backgroundColor:'white',
-      cursor:'pointer',
-      border:'1'
+      borderBottom: "1px solid rgba(0 0 0 / 0.1)",
+      color: state.isFocused ? "#494af8" : "#363c4f",
+      fontFamily: "JetBrains Mono,monospace",
+      fontSize: ".9375rem",
+      padding: "1rem",
+      backgroundColor: "white",
+      cursor: "pointer",
+      border: "1",
     }),
     control: (provided) => ({
       ...provided,
-      display:'flex',
-      padding:'1rem',
-      border:'1px solid rgba(0 0 0 / 0.1)',
-      borderBottom: errors.topic?.message && '1px solid red',
-      borderRadius:'6px',
-      fontSize: '.9375rem',
-      cursor: 'pointer',
-      boxShadow: 'none',
+      display: "flex",
+      padding: "1rem",
+      border: "1px solid rgba(0 0 0 / 0.1)",
+      borderBottom: errors.topic?.message && "1px solid red",
+      borderRadius: "6px",
+      fontSize: ".9375rem",
+      cursor: "pointer",
+      boxShadow: "none",
       "&:hover": {
         border: "1px solid rgba(0 0 0 / 0.1)",
-        boxShadow: "none"
-    }
+        boxShadow: "none",
+      },
     }),
     valueContainer: (provided) => ({
       ...provided,
-      padding:0,
-      maxHeight:'26px',
+      padding: 0,
+      maxHeight: "26px",
     }),
-    indicatorsContainer:(provided)=>({
+    indicatorsContainer: (provided) => ({
       ...provided,
-      maxHeight: '26px',
+      maxHeight: "26px",
     }),
-    indicatorSeparator:(provided)=>({
+    indicatorSeparator: (provided) => ({
       ...provided,
-      display: 'none'
+      display: "none",
     }),
     singleValue: (provided, state) => {
       const opacity = state.isDisabled ? 0.5 : 1;
-      const transition = 'opacity 300ms';
+      const transition = "opacity 300ms";
 
       return { ...provided, opacity, transition };
-    }
-  }
+    },
+  };
   return (
     <>
       <div className="relative bg-gradient-to-b from-[#494af8]/10 to-transparent w-full h-[700px] flex flex-col items-center p-[51px_172px]">
@@ -107,11 +105,14 @@ const Contact = () => {
                 <input
                   type="text"
                   placeholder="Enter your first name"
-                  className={`p-[17px_20px] outline-none placeholder-[--dark]/30 w-full h-[60px] font-[JetBrainsMono] text-[15px] rounded-[6px] border border-black/10 ${errors.firstName?.message ? " border-b-red-500 placeholder:text-red-400":""}`}
-                  {...register('firstName',{
-                    required:'First name is required'
-                  })
-                }
+                  className={`p-[17px_20px] outline-none placeholder-[--dark]/30 w-full h-[60px] font-[JetBrainsMono] text-[15px] rounded-[6px] border border-black/10 ${
+                    errors.firstName?.message
+                      ? " border-b-red-500 placeholder:text-red-400"
+                      : ""
+                  }`}
+                  {...register("firstName", {
+                    required: "First name is required",
+                  })}
                 />
               </div>
               <div className="mb-4 w-1/2">
@@ -120,9 +121,13 @@ const Contact = () => {
                 <input
                   type="text"
                   placeholder="Enter your last name"
-                  className={`p-[17px_20px] outline-none placeholder-[--dark]/30 w-full h-[60px] text-[JetBrainsMono] text-[15px] rounded-[6px] border border-black/10 ${errors.lastName?.message ? " border-b-red-500 placeholder:text-red-400":""}`}
-                  {...register('lastName',{
-                    required:'Last name is required',
+                  className={`p-[17px_20px] outline-none placeholder-[--dark]/30 w-full h-[60px] text-[JetBrainsMono] text-[15px] rounded-[6px] border border-black/10 ${
+                    errors.lastName?.message
+                      ? " border-b-red-500 placeholder:text-red-400"
+                      : ""
+                  }`}
+                  {...register("lastName", {
+                    required: "Last name is required",
                   })}
                 />
               </div>
@@ -132,14 +137,19 @@ const Contact = () => {
               <input
                 type="email"
                 placeholder="Enter your Email Address"
-                className={`p-[17px_20px] outline-none placeholder-[--dark]/30 w-full h-[60px] text-[JetBrainsMono] text-[15px] rounded-[6px] border border-black/10 ${errors.email?.message? "border-b-red-500 placeholder:text-red-400":'' }`}
-                {...register('email',{
-                  required:'Email is required',
+                className={`p-[17px_20px] outline-none placeholder-[--dark]/30 w-full h-[60px] text-[JetBrainsMono] text-[15px] rounded-[6px] border border-black/10 ${
+                  errors.email?.message
+                    ? "border-b-red-500 placeholder:text-red-400"
+                    : ""
+                }`}
+                {...register("email", {
+                  required: "Email is required",
                   pattern: {
-                    value:/^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/,
-                    message:'Invalid email'
-                  }
-                })}              />
+                    value: /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/,
+                    message: "Invalid email",
+                  },
+                })}
+              />
               <span className="mt-2 hidden text-sm text-red-500 peer-[&:not(:placeholder-shown):not(:focus):invalid]:block">
                 Please enter a valid email address
               </span>
@@ -147,28 +157,31 @@ const Contact = () => {
             <div className="mb-4">
               <label className="block mb-[10px] text-lg">Select a topic*</label>
               <Controller
-                  control={control}
-
-                  render={({ field }) =>
-                      <Select
-                          {...field}
-                          styles={customStyles}
-                          classNamePrefix={'topicSelect'}
-                          placeholder={'Select a topic'}
-                          options={contactTopicOptions}
-                          className={'block mb-[10px] text-lg'}
-                      />}
-
-                {...register('topic',{
-                  required:'Topic is required'
+                control={control}
+                render={({ field }) => (
+                  <Select
+                    {...field}
+                    styles={customStyles}
+                    classNamePrefix={"topicSelect"}
+                    placeholder={"Select a topic"}
+                    options={contactTopicOptions}
+                    className={"block mb-[10px] text-lg"}
+                  />
+                )}
+                {...register("topic", {
+                  required: "Topic is required",
                 })}
-                />
+              />
             </div>
             <div className="mb-4">
               <div className="flex items-center mb-[10px] justify-between">
                 <label className="blocktext-lg">Query*</label>
-                <p className={`font-[JetBrainsMono] text-[13px] text-[--dark] opacity-30 ${remainingWordCount<10? 'text-red-500 opacity-100':''}`}>
-                  {remainingWordCount} characters remaining
+                <p
+                  className={`font-[JetBrainsMono] text-[13px] text-[--dark] opacity-30 ${
+                    remainingWordCount < 10 ? "text-red-500 opacity-100" : ""
+                  }`}
+                >
+                  {remainingWordCount} characters left
                 </p>
               </div>
               <textarea
@@ -176,13 +189,18 @@ const Contact = () => {
                 rows={4}
                 maxLength={1500}
                 placeholder="Enter your query here"
-                className={`p-[17px_20px] outline-none error:rounded-b-none placeholder-[--dark]/30 w-full h-[200px] text-[JetBrainsMono] text-[15px] rounded-[6px] border border-black/10 ${errors.query?.message? "border-b-red-500 placeholder:text-red-400":'' }`}
-                {...register('query',{
-                  required:'query is required',
-                  maxLength:1500,
-                  onChange:(event)=>setRemainingWordCount(1500-event.target.value.length)
-                })}>
-              </textarea>
+                className={`p-[17px_20px] outline-none error:rounded-b-none placeholder-[--dark]/30 w-full h-[200px] text-[JetBrainsMono] text-[15px] rounded-[6px] border border-black/10 ${
+                  errors.query?.message
+                    ? "border-b-red-500 placeholder:text-red-400"
+                    : ""
+                }`}
+                {...register("query", {
+                  required: "query is required",
+                  maxLength: 1500,
+                  onChange: (event) =>
+                    setRemainingWordCount(1500 - event.target.value.length),
+                })}
+              ></textarea>
             </div>
             <div className="mb-4 flex items-center justify-between">
               <Turnstile
