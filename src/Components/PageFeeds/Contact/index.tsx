@@ -97,7 +97,7 @@ const Contact = () => {
         </div>
         <div className="absolute w-[1096px] h-[750px] top-[377px] left-[50%] translate-x-[-50%] flex bg-white border border-black/10 rounded-[10px] p-[50px_111px_39px_111px]">
           <form
-            className="w-full font-[DMSans] text-[--dark] font-[500]"
+            className="w-full font-[DMSans] text-[--dark] font-[500] contacUS-form"
             onSubmit={handleSubmit(onSubmit)}
             noValidate
           >
