@@ -127,10 +127,6 @@
   right: 30px;
 }
 
-
-.table_wrap { /* the table wrapper */
-	margin: 2em auto;
-}
 .table_grid { /* the table */
 	display: grid;
 	grid-template-rows: auto;
