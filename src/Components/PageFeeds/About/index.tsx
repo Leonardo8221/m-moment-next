@@ -1,6 +1,31 @@
 import Image from "next/image";
 import styles from "./about.module.css";
+import { useRouter } from "next/router";
 const About = () => {
+  const router = useRouter();
+
+  const scrollToSectionWithOffset = () => {
+    const element = document.getElementById("urlGenerator");
+    const select = document.getElementById("selectList");
+    const qrCode = document.getElementById("qrCode");
+    if (element) {
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - 86;
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth",
+      });
+    }
+  };
+  const handleTryMessagMoment = () => {
+    // If already on the homepage, just scroll to the specific div.
+    if (router.pathname == "/") {
+      scrollToSectionWithOffset();
+    } else {
+      // If not, first navigate to the homepage then scroll.
+      router.push("/").then(() => scrollToSectionWithOffset());
+    }
+  };
   return (
     <div className="flex flex-col">
       <div className={styles.topSection}>
@@ -56,8 +81,12 @@ const About = () => {
         />
       </div>
       <div className="w-full h-[723px] relative flex flex-col items-center pt-[155px] pb-[70px]">
-        <div className={`flex flex-col items-center w-[1320px] h-[500px] pt-[117px] absolute  left-[50%] translate-x-[-50%] bg-[--blue] rounded-[20px] text-white ${styles.top__227}`}>
-          <h1 className={`font-[DMSans] text-[40px] font-[700] text-center mb-[20px] ${styles.line_h_52}`}>
+        <div
+          className={`flex flex-col items-center w-[1320px] h-[500px] pt-[117px] absolute  left-[50%] translate-x-[-50%] bg-[--blue] rounded-[20px] text-white ${styles.top__227}`}
+        >
+          <h1
+            className={`font-[DMSans] text-[40px] font-[700] text-center mb-[20px] ${styles.line_h_52}`}
+          >
             We believe that words can be a powerful tool for <br /> connection
             and communication, but it&rsquo;s also true that <br />
             words cannot be unspoken.
@@ -90,6 +119,7 @@ const About = () => {
         </p>
         <button
           type="button"
+          onClick={handleTryMessagMoment}
           className="w-[315px] h-[46px] inline-flex items-center justify-center text-white bg-[--blue] font-[JetBrainsMono] text-[15px] font-[700] text-center rounded-[5px]"
         >
           Try MessageMoment
@@ -97,7 +127,9 @@ const About = () => {
       </div>
       <div className="w-full h-[600px] flex gap-[60px] items-center justify-center p-[150px_172px] bg-gradient-to-b from-[#494af8]/10 to-transparent">
         <Image width={500} height={300} src={"/img/about/third.svg"} alt="" />
-        <div className={`flex flex-col text-left text-[#363c4f] ${styles.width_538}`}>
+        <div
+          className={`flex flex-col text-left text-[#363c4f] ${styles.width_538}`}
+        >
           <h1 className="font-[DMSans] text-[60px] font-[700] mb-[20px] leading-[70px]">
             We take the privacy of our users seriously
           </h1>
@@ -109,9 +141,12 @@ const About = () => {
         </div>
       </div>
       <div className="w-full h-[600px] flex gap-[60px] text-[#363c4f] items-center justify-between p-[119px_172px_119px_170px] bg-gradient-to-b from-[#494af8]/10 to-transparent">
-        <div className={`flex flex-col text-left text-[#363c4f] ${styles.width_538}`}>
+        <div
+          className={`flex flex-col text-left text-[#363c4f] ${styles.width_538}`}
+        >
           <h1 className="font-[DMSans] text-[60px] font-[700] mb-[20px] leading-[70px]">
-            The solution <br /> you’ve been <br />searching for
+            The solution <br /> you’ve been <br />
+            searching for
           </h1>
           <p className="font-[JetBrainsMono] text-[17px]">
             Our mission is to provide a reliable and trustworthy platform for
@@ -132,7 +167,9 @@ const About = () => {
             alt=""
             className={`absolute left-[50%] translate-x-[-50%] ${styles.top__60}`}
           />
-          <h1 className={`text-[40px] font-[600] text-center font-[DMSans] mb-[20px] ${styles.line_h_52}`}>
+          <h1
+            className={`text-[40px] font-[600] text-center font-[DMSans] mb-[20px] ${styles.line_h_52}`}
+          >
             We are dedicated to delivering an
             <br /> unparalleled user experience and are always <br />
             looking for ways to improve our services.
