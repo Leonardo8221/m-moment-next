@@ -1,0 +1,65 @@
+.cookieModal{
+  top: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  right: 0;
+  z-index: 99;
+  width: 690px;
+  height: calc(100vh - 100px);
+  border-radius: 10px;
+  position: fixed;
+}
+.cookieModal::before{
+  content: "";
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    left: 0;
+    top: 0;
+    background: #f1f1f1eb;
+}
+.cookieTitle{
+  display: flex;
+  align-items: end;
+  padding-bottom: 20px;
+  border-bottom: 1px solid gainsboro;
+  gap: 20px;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+.cookieTitle p{
+  color: rgba(73, 74, 248, 1);
+}
+.accordions{
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+}
+.accorItems{
+  padding: 0px 20px;
+  background: rgba(250, 250, 250, 1);
+  border: solid 1px rgba(238, 238, 238, 1);
+  border-radius: 5px;
+}
+.accorItems p:not(.label){
+  padding-top: 10px;
+  padding-bottom: 15px;
+}
+.infoSection{
+  border: 1px solid rgba(238, 238, 238, 1);
+  border-radius: 5px;
+  padding: 15px 20px 18px;
+  margin-top:30px;
+}
+.modalBody{
+  padding: 20px 30px;
+}
+.modalFooter{
+  padding: 0 30px;
+}
+.modalFooter button{
+  width: 180px;
+  height: 46px;
+}
+

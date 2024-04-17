@@ -6,7 +6,7 @@ import { IoIosArrowDown } from "react-icons/io";
 import { FaToggleOn, FaToggleOff } from "react-icons/fa";
 import { CookieMap } from "@/utils/constants";
 import { setCookie } from "cookies-next";
-
+import styles from "./cookie.module.css";
 
 
 const Modal = ({ onClose, cookieName }: any) => {
@@ -61,35 +61,37 @@ const Modal = ({ onClose, cookieName }: any) => {
 
 
   return (
-    <div className="w-full p-5 bg-white cursor-pointer h-full">
-      <div className="relative -top-[40px] -left-[-40px]">
+    <div className={`w-full h-full ${styles.cookieModal}`}>
+      <div className="p-5 px-0 rounded-[10px] h-full bg-white cursor-pointer relative">
+      <div className={`relative -top-[40px] ${styles.cookieTitle}`}>
         <Image
           src={"/cookies_icon.svg"}
           alt={"cookies"}
           height={80}
           width={80}
         />
+        <p className="relative font-bold font-[DMSans] text-[26px] ">
+        Cookie Preferences
+      </p>
       </div>
       <div className="absolute top-2 right-3">
         <p className="text-end font-bold text-gray-400">
           <button onClick={onClose}>X</button>
         </p>
       </div>
-      <p className="relative -top-12 left-8 font-bold font-[DMSans] text-[26px] ">
-        Cookie Preferences
-      </p>
-      <div className="relative -top-10">
+      
+      <div className={`relative -top-[40px] ${styles.modalBody}`}>
         <div>
-          <h1 className="text-indigo-600 text-xl">Cookie Usage</h1>
-          <p>
+          <h1 className="text-indigo-600 font-[DMSans] text-[17px] font-[500]">Cookie Usage</h1>
+          <p className="mt-[10px] mb-[18px] font-[JetBrainsMono] text-[15px] text-[#363c4f]">
             We use cookies to ensure the basic functionalities of this website and to enhance your online experience.
             You can choose for each category to opt-in/out whenever you want. For more details relative to cookies and
             other sensitive data, please read the full Privacy Policy.
           </p>
         </div>
-        <div>
+        <div className={styles.accordions}>
           {CookieMap.map((item, index) => (
-            <div key={index} className="border border-gray-300 bg-gray-200">
+            <div key={index} className={`font-[JetBrainsMono] text-[15px] text-[#363c4f] ${styles.accorItems}`}>
               <div
                 className="flex items-center cursor-pointer"
                 onClick={() => handleToggleExpand(index)}
@@ -99,9 +101,9 @@ const Modal = ({ onClose, cookieName }: any) => {
                     className={`text-blue-500 mr-2 transform ${index === expandedIndex ? "rotate-180" : ""
                       }`}
                   />
-                  <p className="my-3">{item.label}</p>
+                  <p className={`my-3 ${styles.label}`}>{item.label}</p>
                 </div>
-                <div className="w-1/6 justify-end items-center">
+                <div className="w-1/6 flex justify-end items-center">
                   <div>
                     {/* Toggle between FaToggleOff and FaToggleOn based on toggleStates */}
                     {toggleStates[index] ? (
@@ -124,28 +126,31 @@ const Modal = ({ onClose, cookieName }: any) => {
             </div>
           ))}
         </div>
-        <div>
-          <h1 className="text-indigo-600 text-lg">More Information</h1>
-          <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Amet
-            facere accusantium suscipit consequatur quibusdam, vel veritatis{" "}
+        <div className={styles.infoSection}>
+          <h1 className="text-indigo-600 font-[DMSans] text-[17px] font-[500]">More Information</h1>
+          <p className="font-[JetBrainsMono] text-[15px] text-[#363c4f] mt-[12px] mb-[18px]">
+          For any queries in relation to our policy on cookies and your choices, please
             <span className="underline cursor-pointer">
               <Link href="/contact-us">Contact-us</Link>
             </span>
           </p>
         </div>
       </div>
-      <div className="flex items-center justify-center gap-4 w-full px-2">
+      <div className={`flex items-center justify-between gap-4 w-full ${styles.modalFooter}`}>
+        <div className="flex items-center gap-4">
         <button className="bg-indigo-600 py-2 px-4 rounded-md text-white">
-          Accept all
+          Accept All
         </button>
         <button className="bg-gray-200 py-2 px-4 rounded-md text-black">
-          Reject all
+          Reject All
         </button>
+        </div>
         <button className="bg-gray-200 py-2 px-4 rounded-md text-black" onClick={handleCookieSaveSettings}>
           Save Settings
         </button>
       </div>
+      </div>
+     
     </div>
   );
 };

@@ -75,7 +75,7 @@ function FAQ() {
   return (
     <div className="w-full">
       <div className="p-[51px_172px_40px_172px] bg-gradient-to-b from-[#494af8]/10 to-transparent">
-        <div className="flex flex-col items-center justify-center gap-2 w-full">
+        <div className="flex flex-col items-center justify-center w-full">
           <Image
             width={128}
             height={128}
