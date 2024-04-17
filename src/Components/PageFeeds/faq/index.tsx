@@ -91,7 +91,7 @@ function FAQ() {
           <input
             type="text"
             placeholder="Type keywords to find answers"
-            className="w-full h-[60px] p-[17px_20px] placeholder-[--dark]/30 text-[--dark] font-[JetBrainsMono] rounded-[6px] outline-none"
+            className="w-full h-[60px] font-15 p-[17px_20px] placeholder-[--dark]/30 text-[--dark] font-[JetBrainsMono] rounded-[6px] outline-none"
             onChange={onInputChange}
           />
           <span className="absolute top-[18px] right-[20px] z-10 text-[#ccc] font-bold">

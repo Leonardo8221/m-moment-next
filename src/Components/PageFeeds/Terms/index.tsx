@@ -9,8 +9,8 @@ const MarkdownPreview = dynamic(
 
 const Terms = () => {
   return (
-    <div className="w-full flex flex-col text-left pt-[51px] pb-[143px] px-[172px] bg-gradient-to-b from-[#494af8]/10 to-transparent">
-      <h1 className="font-[DMSans] text-4xl font-bold leading-normal tracking-normal text-left text-[--dark] m-0">
+    <div className="w-full flex flex-col text-left pt-[51px] pb-[143px] px-[172px] bg-gradient-to-b from-[#494af8]/5 to-transparent">
+      <h1 className="font-[DMSans] page-title font-bold leading-normal tracking-normal text-left text-[--dark] m-0">
         Terms and Conditions of Use
       </h1>
       <div className="w-[190px] h-[46px] mt-[48px] mb-[30px] pt-[10px] pb-[13px] text-center rounded-[6px] border border-gray-200 bg-white text-[--dark] font-[JetBrainsMono] text-[15px]">
@@ -19,7 +19,7 @@ const Terms = () => {
       <div className="w-full flex flex-col gap-[36px] border-b border-[#000]/10 pb-[33px] mb-[30px]">
         {terms.map((term, index) => (
           <div className="flex flex-col" key={index}>
-            <h1 className="font-[DMSans] mb-[30px] text-3xl font-bold leading-normal tracking-normal text-justify text-[--blue]">
+            <h1 className="font-[DMSans] mb-[30px] policy-heading font-bold leading-normal tracking-normal text-justify text-[--blue]">
               {term.title}
             </h1>
             <MarkdownPreview
@@ -41,7 +41,7 @@ const Terms = () => {
         ))}
       </div>
       <div className="flex flex-col">
-        <h1 className="font-[DMSans] mb-[30px] text-3xl font-bold leading-normal tracking-normal text-justify text-[--blue]">
+        <h1 className="font-[DMSans] mb-[30px] policy-heading font-bold leading-normal tracking-normal text-justify text-[--blue]">
           Credits
         </h1>
         <div className="mb-[18px]">
