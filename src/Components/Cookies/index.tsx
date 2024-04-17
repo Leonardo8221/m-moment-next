@@ -35,7 +35,7 @@ const Cookies = () => {
   return (
     <>
       {isOpenCookieModal && !isCustomCookieModalOpen && (
-        <div className="relative w-[440px] h-[290px] p-[25px_30px_30px_30px] bg-white cursor-pointer rounded-[10px] border border-black/10">
+        <div className="relative w-[440px] h-[290px] p-[25px_30px_30px_30px] bg-white cursor-pointer rounded-[10px] border border-black/10 z-100">
           <div className="absolute -top-[30px] -left-[20px]">
             <Image
               src={"/cookies_icon.svg"}
