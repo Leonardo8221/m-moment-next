@@ -174,6 +174,7 @@ const Contact = () => {
               <textarea
                 required
                 rows={4}
+                maxLength={1500}
                 placeholder="Enter your query here"
                 className={`p-[17px_20px] outline-none error:rounded-b-none placeholder-[--dark]/30 w-full h-[200px] text-[JetBrainsMono] text-[15px] rounded-[6px] border border-black/10 ${errors.query?.message? "border-b-red-500 placeholder:text-red-400":'' }`}
                 {...register('query',{

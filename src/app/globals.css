@@ -260,8 +260,17 @@ body {
 textarea::placeholder {
   font-family: JetBrainsMono;
 }
-.contacUS-form .border-b-red-500{
+.contacUS-form .border-b-red-500  {
   border-bottom: 2px solid rgba(235, 87, 87, 1);
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
+}
+.contacUS-form .css-1hr6uc-control,.contacUS-form .css-1npzrp-control{
+  border-bottom: 2px solid rgba(235, 87, 87, 1) !important;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.contacUS-form .text-red-500{
+  color: rgba(235, 87, 87, 1);
+  opacity: 1;
 }
