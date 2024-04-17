@@ -112,10 +112,10 @@ const Modal = ({ onClose, cookieName }: any) => {
             ))}
           </div>
           <div className={styles.infoSection}>
-            <h1 className="text-indigo-600 font-[DMSans] text-[17px] font-[500]">
+            <h1 className="text-[--blue] font-[DMSans] text-[17px] font-[500] m-0">
               More Information
             </h1>
-            <p className="font-[JetBrainsMono] text-[15px] text-[#363c4f] mt-[12px] mb-[18px]">
+            <p className="font-[JetBrainsMono] text-[15px] text-[#363c4f] mt-[12px]">
               For any queries in relation to our policy on cookies and your
               choices, please{' '}
               <span className="underline cursor-pointer">
