@@ -274,3 +274,15 @@ textarea::placeholder {
   color: rgba(235, 87, 87, 1);
   opacity: 1;
 }
+.message-sent-modal{
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+.clickable-overlay{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}

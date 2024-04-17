@@ -1,173 +1,175 @@
-import {contactTopicOptions} from "@/utils/constants";
+import { contactTopicOptions } from '@/utils/constants'
 
-'use-client';
-import React, {useState} from "react";
-import Link from "next/link";
-import { Turnstile } from "@marsidev/react-turnstile";
-import Image from "next/image";
-import {Controller, useForm} from "react-hook-form";
+;('use-client')
+import React, { useState } from 'react'
+import Link from 'next/link'
+import { Turnstile } from '@marsidev/react-turnstile'
+import Image from 'next/image'
+import { Controller, useForm } from 'react-hook-form'
 import Select from 'react-select'
 type ContactUseFormValues = {
-  firstName: string;
-  lastName: string;
-  email: string;
-  topic: { label:string,value:string };
-  query: string;
-
+  firstName: string
+  lastName: string
+  email: string
+  topic: { label: string; value: string }
+  query: string
 }
 const Contact = () => {
+  const [messageSent, setmessageSent] = useState<boolean | null>(false)
+  const formObject = useForm<ContactUseFormValues>({
+    mode: 'onBlur',
+  })
+  const { register, control, handleSubmit, formState } = formObject
+  const { errors, isValid } = formState
+  const [remainingWordCount, setRemainingWordCount] = useState<number>(1500)
 
-  const formObject=useForm<ContactUseFormValues>({
-    mode:'onBlur'
-  });
-  const {register,control, handleSubmit,formState}= formObject;
-  const {errors,isValid}=formState;
-  const [remainingWordCount,setRemainingWordCount]=useState<number>(1500);
-
-  const onSubmit=(data:ContactUseFormValues)=>{
-    console.log('Form submitted',data)
+  const onSubmit = (data: ContactUseFormValues) => {
+    console.log('Form submitted', data)
   }
   const customStyles = {
     option: (provided, state) => ({
       ...provided,
       borderBottom: '1px solid rgba(0 0 0 / 0.1)',
-      color:state.isFocused? '#494af8':'#363c4f',
-      fontFamily:'JetBrains Mono,monospace',
-      fontSize:'.9375rem',
+      color: state.isFocused ? '#494af8' : '#363c4f',
+      fontFamily: 'JetBrains Mono,monospace',
+      fontSize: '.9375rem',
       padding: '1rem',
-      backgroundColor:'white',
-      cursor:'pointer',
-      border:'1'
+      backgroundColor: 'white',
+      cursor: 'pointer',
+      border: '1',
     }),
     control: (provided) => ({
       ...provided,
-      display:'flex',
-      padding:'1rem',
-      border:'1px solid rgba(0 0 0 / 0.1)',
+      display: 'flex',
+      padding: '1rem',
+      border: '1px solid rgba(0 0 0 / 0.1)',
       borderBottom: errors.topic?.message && '1px solid red',
-      borderRadius:'6px',
+      borderRadius: '6px',
       fontSize: '.9375rem',
       cursor: 'pointer',
       boxShadow: 'none',
-      "&:hover": {
-        border: "1px solid rgba(0 0 0 / 0.1)",
-        boxShadow: "none"
-    }
+      '&:hover': {
+        border: '1px solid rgba(0 0 0 / 0.1)',
+        boxShadow: 'none',
+      },
     }),
     valueContainer: (provided) => ({
       ...provided,
-      padding:0,
-      maxHeight:'26px',
+      padding: 0,
+      maxHeight: '26px',
     }),
-    indicatorsContainer:(provided)=>({
+    indicatorsContainer: (provided) => ({
       ...provided,
       maxHeight: '26px',
     }),
-    indicatorSeparator:(provided)=>({
+    indicatorSeparator: (provided) => ({
       ...provided,
-      display: 'none'
+      display: 'none',
     }),
     singleValue: (provided, state) => {
-      const opacity = state.isDisabled ? 0.5 : 1;
-      const transition = 'opacity 300ms';
+      const opacity = state.isDisabled ? 0.5 : 1
+      const transition = 'opacity 300ms'
 
-      return { ...provided, opacity, transition };
-    }
+      return { ...provided, opacity, transition }
+    },
   }
   return (
     <>
-      <div className="relative bg-gradient-to-b from-[#494af8]/10 to-transparent w-full h-[700px] flex flex-col items-center p-[51px_172px]">
-        <Image
-          width={128}
-          height={128}
-          src={"/img/contact.svg"}
-          alt=""
-          className="max-auto mb-[30px]"
-        />
-        <div className="font-[DMSans] text-[--dark] w-full flex flex-col justify-center items-center">
-          <h1 className="text-[40px] font-bold mb-[28px]">Contact Us</h1>
-          <p className="text-[17px] font-[500] text-center leading-[30px]">
-            Need answers or help? We might have answered your questons in our{" "}
-            <span className="text-[--blue]">
-              <Link href="/faq">FAQs</Link>
+      <div className='relative bg-gradient-to-b from-[#494af8]/10 to-transparent w-full h-[700px] flex flex-col items-center p-[51px_172px]'>
+        <Image width={128} height={128} src={'/img/contact.svg'} alt='' className='max-auto mb-[30px]' />
+        <div className='font-[DMSans] text-[--dark] w-full flex flex-col justify-center items-center'>
+          <h1 className='text-[40px] font-bold mb-[28px]'>Contact Us</h1>
+          <p className='text-[17px] font-[500] text-center leading-[30px]'>
+            Need answers or help? We might have answered your questons in our{' '}
+            <span className='text-[--blue]'>
+              <Link href='/faq'>FAQs</Link>
             </span>
             . <br />
             Otherwise complete this form on the topic relevant to your query
           </p>
         </div>
-        <div className="absolute w-[1096px] h-[750px] top-[377px] left-[50%] translate-x-[-50%] flex bg-white border border-black/10 rounded-[10px] p-[50px_111px_39px_111px]">
+        <div className='absolute w-[1096px] h-[750px] top-[377px] left-[50%] translate-x-[-50%] flex bg-white border border-black/10 rounded-[10px] p-[50px_111px_39px_111px]'>
           <form
-            className="w-full font-[DMSans] text-[--dark] font-[500] contacUS-form"
+            className='w-full font-[DMSans] text-[--dark] font-[500] contacUS-form'
             onSubmit={handleSubmit(onSubmit)}
             noValidate
           >
-            <div className="flex gap-[20px]">
-              <div className="mb-4 w-1/2">
-                <label className="block mb-[10px] text-lg">First Name*</label>
+            <div className='flex gap-[20px]'>
+              <div className='mb-4 w-1/2'>
+                <label className='block mb-[10px] text-lg'>First Name*</label>
                 <input
-                  type="text"
-                  placeholder="Enter your first name"
-                  className={`p-[17px_20px] outline-none placeholder-[--dark]/30 w-full h-[60px] font-[JetBrainsMono] text-[15px] rounded-[6px] border border-black/10 ${errors.firstName?.message ? " border-b-red-500 placeholder:text-red-400":""}`}
-                  {...register('firstName',{
-                    required:'First name is required'
-                  })
-                }
+                  type='text'
+                  placeholder='Enter your first name'
+                  className={`p-[17px_20px] outline-none placeholder-[--dark]/30 w-full h-[60px] font-[JetBrainsMono] text-[15px] rounded-[6px] border border-black/10 ${
+                    errors.firstName?.message ? ' border-b-red-500 placeholder:text-red-400' : ''
+                  }`}
+                  {...register('firstName', {
+                    required: 'First name is required',
+                  })}
                 />
               </div>
-              <div className="mb-4 w-1/2">
-                <label className="block mb-[10px] text-lg">Last Name*</label>
+              <div className='mb-4 w-1/2'>
+                <label className='block mb-[10px] text-lg'>Last Name*</label>
 
                 <input
-                  type="text"
-                  placeholder="Enter your last name"
-                  className={`p-[17px_20px] outline-none placeholder-[--dark]/30 w-full h-[60px] text-[JetBrainsMono] text-[15px] rounded-[6px] border border-black/10 ${errors.lastName?.message ? " border-b-red-500 placeholder:text-red-400":""}`}
-                  {...register('lastName',{
-                    required:'Last name is required',
+                  type='text'
+                  placeholder='Enter your last name'
+                  className={`p-[17px_20px] outline-none placeholder-[--dark]/30 w-full h-[60px] text-[JetBrainsMono] text-[15px] rounded-[6px] border border-black/10 ${
+                    errors.lastName?.message ? ' border-b-red-500 placeholder:text-red-400' : ''
+                  }`}
+                  {...register('lastName', {
+                    required: 'Last name is required',
                   })}
                 />
               </div>
             </div>
-            <div className="mb-4">
-              <label className="block mb-[10px] text-lg">Email Address*</label>
+            <div className='mb-4'>
+              <label className='block mb-[10px] text-lg'>Email Address*</label>
               <input
-                type="email"
-                placeholder="Enter your Email Address"
-                className={`p-[17px_20px] outline-none placeholder-[--dark]/30 w-full h-[60px] text-[JetBrainsMono] text-[15px] rounded-[6px] border border-black/10 ${errors.email?.message? "border-b-red-500 placeholder:text-red-400":'' }`}
-                {...register('email',{
-                  required:'Email is required',
+                type='email'
+                placeholder='Enter your Email Address'
+                className={`p-[17px_20px] outline-none placeholder-[--dark]/30 w-full h-[60px] text-[JetBrainsMono] text-[15px] rounded-[6px] border border-black/10 ${
+                  errors.email?.message ? 'border-b-red-500 placeholder:text-red-400' : ''
+                }`}
+                {...register('email', {
+                  required: 'Email is required',
                   pattern: {
-                    value:/^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/,
-                    message:'Invalid email'
-                  }
-                })}              />
-              <span className="mt-2 hidden text-sm text-red-500 peer-[&:not(:placeholder-shown):not(:focus):invalid]:block">
+                    value: /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/,
+                    message: 'Invalid email',
+                  },
+                })}
+              />
+              <span className='mt-2 hidden text-sm text-red-500 peer-[&:not(:placeholder-shown):not(:focus):invalid]:block'>
                 Please enter a valid email address
               </span>
             </div>
-            <div className="mb-4">
-              <label className="block mb-[10px] text-lg">Select a topic*</label>
+            <div className='mb-4'>
+              <label className='block mb-[10px] text-lg'>Select a topic*</label>
               <Controller
-                  control={control}
-
-                  render={({ field }) =>
-                      <Select
-                          {...field}
-                          styles={customStyles}
-                          classNamePrefix={'topicSelect'}
-                          placeholder={'Select a topic'}
-                          options={contactTopicOptions}
-                          className={'block mb-[10px] text-lg'}
-                      />}
-
-                {...register('topic',{
-                  required:'Topic is required'
+                control={control}
+                render={({ field }) => (
+                  <Select
+                    {...field}
+                    styles={customStyles}
+                    classNamePrefix={'topicSelect'}
+                    placeholder={'Select a topic'}
+                    options={contactTopicOptions}
+                    className={'block mb-[10px] text-lg'}
+                  />
+                )}
+                {...register('topic', {
+                  required: 'Topic is required',
                 })}
-                />
+              />
             </div>
-            <div className="mb-4">
-              <div className="flex items-center mb-[10px] justify-between">
-                <label className="blocktext-lg">Query*</label>
-                <p className={`font-[JetBrainsMono] text-[13px] text-[--dark] opacity-30 ${remainingWordCount<10? 'text-red-500 opacity-100':''}`}>
+            <div className='mb-4'>
+              <div className='flex items-center mb-[10px] justify-between'>
+                <label className='blocktext-lg'>Query*</label>
+                <p
+                  className={`font-[JetBrainsMono] text-[13px] text-[--dark] opacity-30 ${
+                    remainingWordCount < 10 ? 'text-red-500 opacity-100' : ''
+                  }`}
+                >
                   {remainingWordCount} characters remaining
                 </p>
               </div>
@@ -175,33 +177,66 @@ const Contact = () => {
                 required
                 rows={4}
                 maxLength={1500}
-                placeholder="Enter your query here"
-                className={`p-[17px_20px] outline-none error:rounded-b-none placeholder-[--dark]/30 w-full h-[200px] text-[JetBrainsMono] text-[15px] rounded-[6px] border border-black/10 ${errors.query?.message? "border-b-red-500 placeholder:text-red-400":'' }`}
-                {...register('query',{
-                  required:'query is required',
-                  maxLength:1500,
-                  onChange:(event)=>setRemainingWordCount(1500-event.target.value.length)
-                })}>
-              </textarea>
+                placeholder='Enter your query here'
+                className={`p-[17px_20px] outline-none error:rounded-b-none placeholder-[--dark]/30 w-full h-[200px] text-[JetBrainsMono] text-[15px] rounded-[6px] border border-black/10 ${
+                  errors.query?.message ? 'border-b-red-500 placeholder:text-red-400' : ''
+                }`}
+                {...register('query', {
+                  required: 'query is required',
+                  maxLength: 1500,
+                  onChange: (event) => setRemainingWordCount(1500 - event.target.value.length),
+                })}
+              ></textarea>
             </div>
-            <div className="mb-4 flex items-center justify-between">
-              <Turnstile
-                siteKey="1x00000000000000000000AA"
-                className="w-[300px]"
-              />
-              <button
+            <div className='mb-4 flex items-center justify-between'>
+              <Turnstile siteKey='1x00000000000000000000AA' className='w-[300px]' />
+              <button onClick={() => setmessageSent(true)}
                 disabled={!isValid}
-                className="w-[236px] h-[46px] inline-flex items-center justify-center text-white rounded-[6px] bg-[--blue] font-[JetBrainsMono] disabled:bg-[#ccc]"
+                className='w-[236px] h-[46px] inline-flex items-center justify-center text-white rounded-[6px] bg-[--blue] font-[JetBrainsMono] disabled:bg-[#ccc]'
               >
                 Send
               </button>
             </div>
           </form>
         </div>
+        {
+          messageSent && <>
+          <div className='clickable-overlay' onClick={() => setmessageSent(false)}></div> <div className='py-[50px] fixed flex flex-1 flex-col justify-between message-sent-modal'>
+            
+            <div className='absolute w-[470px] h-[470px] top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] pt-[88px] px-[87px] pb-[41px] bg-[#494af8]/50 filter blur-[100px]'></div>
+            <div className='flex-1 flex items-center justify-center text-center'>
+              <div className='flex flex-col bg-white pt-[134px] justify-between pb-[64px] w-[720px] h-[400px] relative border border-black/10 rounded-[10px]'>
+                <Image
+                  width={128}
+                  height={128}
+                  src={'/img/messageSent.svg'}
+                  alt=''
+                  className='absolute left-[50%] translate-x-[-50%] top-[-64px]'
+                />
+                <div className='flex flex-col justify-center items-center'>
+                  <h3 className='font-[DMSans] text-[26px] font-bold text-[--blue] text-center mb-[30px]'>
+                    Message Sent
+                  </h3>
+                  <p className='font-[JetBrainsMono] text-[16px] font-normal text-[--dark] text-center mb-[33px]'>
+                  We’ve received your message. A MessageMoment team member <br /> will be in contact with you soon. Thank you.
+                  </p>
+                  <button onClick={() => setmessageSent(false)}
+                  className='w-[236px] h-[46px] inline-flex items-center justify-center text-white rounded-[6px] bg-[--blue] font-[JetBrainsMono] disabled:bg-[#ccc]'
+                >
+                  OK
+                </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          </>
+        }
+        
       </div>
-      <div className="w-full bg-white h-[567px]"></div>
-    </>
-  );
-};
 
-export default Contact;
+      <div className='w-full bg-white h-[567px]'></div>
+    </>
+  )
+}
+
+export default Contact
