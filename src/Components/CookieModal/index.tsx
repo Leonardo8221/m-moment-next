@@ -81,7 +81,7 @@ const Modal = ({ onClose, cookieName }: any) => {
               We use cookies to ensure the basic functionalities of this website and to enhance your online experience.
               You can choose for each category to opt-in/out whenever you want. For more details relative to cookies and
               other sensitive data, please read the full&nbsp;<span className='underline cursor-pointer'>
-                <Link href='/contact-us'>Contact-us</Link>
+                <Link href='/privacy'>Privacy Policy</Link>
               </span>.
             </p>
           </div>
@@ -178,7 +178,7 @@ const Modal = ({ onClose, cookieName }: any) => {
           <div className={styles.infoSection}>
             <h1 className='text-indigo-600 font-[DMSans] text-[17px] font-[500]'>More Information</h1>
             <p className='font-[JetBrainsMono] text-[15px] text-[#363c4f] mt-[12px] mb-[18px]'>
-              For any queries in relation to our policy on cookies and your choices, please &nbsp;
+              For any queries in relation to our policy on cookies and your choices, please&nbsp;
               <span className='underline cursor-pointer'>
                 <Link href='/contact-us'>Contact-us</Link>
               </span>
