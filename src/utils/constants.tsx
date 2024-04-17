@@ -181,9 +181,9 @@ export const faqsData = [
 ];
 
 export const CookieMap = [
-  { label: "Strictly necessary cookies", expand: "These cookies are essential for the proper functioning of this website. Without these cookies, the website would not work properly." },
-  { label: "Performance and Analytics cookies", expand: "These cookies allow this website to remember the choices you have made in the past." },
-  { label: "Advertisement and Targeting cookies", expand: "These cookies collect information about how you use this website, which pages you visited and which links you clicked on. All of the data is anonymized and cannot be used to identify you." },
+  { label: "Strictly necessary cookies", expand: "These cookies are essential for the proper functioning of this website. Without these cookies, the website would not work properly.",id:"001" },
+  { label: "Performance and Analytics cookies", expand: "These cookies allow this website to remember the choices you have made in the past.",id:"002" },
+  { label: "Advertisement and Targeting cookies", expand: "These cookies collect information about how you use this website, which pages you visited and which links you clicked on. All of the data is anonymized and cannot be used to identify you.",id:"003" },
 ];
 export const contactTopicOptions=[
   {label:'General Query', value:'general-query'},

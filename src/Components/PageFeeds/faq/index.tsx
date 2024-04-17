@@ -75,7 +75,7 @@ function FAQ() {
   return (
     <div className="w-full">
       <div className="p-[51px_172px_40px_172px] bg-gradient-to-b from-[#494af8]/10 to-transparent">
-        <div className="flex flex-col items-center justify-center gap-2 w-full">
+        <div className="flex flex-col items-center justify-center w-full">
           <Image
             width={128}
             height={128}
@@ -91,7 +91,7 @@ function FAQ() {
           <input
             type="text"
             placeholder="Type keywords to find answers"
-            className="w-full h-[60px] p-[17px_20px] placeholder-[--dark]/30 text-[--dark] font-[JetBrainsMono] rounded-[6px] outline-none"
+            className="w-full h-[60px] font-15 p-[17px_20px] placeholder-[--dark]/30 text-[--dark] font-[JetBrainsMono] rounded-[6px] outline-none"
             onChange={onInputChange}
           />
           <span className="absolute top-[18px] right-[20px] z-10 text-[#ccc] font-bold">

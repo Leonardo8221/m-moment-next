@@ -223,3 +223,36 @@ body {
 .slick-prev::before{
   background-image: url('../../public/img/icons/left-arrow.svg');
 }
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 5px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #b0b0b0;
+}
+
+.page-title{
+  font-size: 40px ;
+}
+.policy-heading{
+  font-size: 26px ;
+}
+.font-15{
+  font-size: 15px;
+}
+.rotate--90{
+  transform: rotate(-90deg);
+}
