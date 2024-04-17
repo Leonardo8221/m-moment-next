@@ -44,6 +44,9 @@
   gap: 10px;
   flex-direction: column;
 }
+.accorItems > p{
+  margin-top: 19px !important;
+}
 .accorItems {
   padding: 13px 20px;
   background:#fafafa;
