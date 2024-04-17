@@ -41,7 +41,6 @@ const Contact = () => {
     }),
     control: (provided) => ({
       ...provided,
-      display: 'flex',
       padding: '1rem',
       border: '1px solid rgba(0 0 0 / 0.1)',
       borderBottom: errors.topic?.message && '1px solid red',
@@ -59,7 +58,7 @@ const Contact = () => {
       padding: 0,
       maxHeight: '26px',
       display:'flex',
-      alignItems:'self-start'
+      lineHeight: 1
     }),
     indicatorsContainer: (provided) => ({
       ...provided,
