@@ -69,21 +69,145 @@
   font-style: normal;
   font-stretch: normal;
 }
+h1 {
+  font-family: DMSans;
+  font-size: 80px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1;
+  letter-spacing: -2px;
+}
+
+h2 {
+  font-family: DMSans;
+  font-size: 60px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.17;
+  letter-spacing: normal;
+}
+
+h3 {
+  font-family: DMSans;
+  font-size: 40px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+}
+
+h4 {
+  font-family: DMSans;
+  font-size: 26px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+}
+
+h5 {
+  font-family: JetBrainsMono;
+  font-size: 20px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+}
+
+h6 {
+  font-family: JetBrainsMono;
+  font-size: 18px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+}
+
+.P3 {
+  font-family: DMSans;
+  font-size: 17px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.41;
+  letter-spacing: normal;
+}
+
+.H7 {
+  font-family: JetBrainsMono;
+  font-size: 17px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+}
+
+.P1 {
+  font-family: DMSans;
+  font-size: 17px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.41;
+  letter-spacing: normal;
+}
+
+button {
+  font-family: JetBrainsMono;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+}
+
+.P2 {
+  font-family: JetBrainsMono;
+  font-size: 15px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.53;
+  letter-spacing: normal;
+}
+
+.N1 {
+  font-family: DMSans;
+  font-size: 13px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+}
+
+.N2 {
+  font-family: JetBrainsMono;
+  font-size: 13px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+}
 
 html,
 body {
   padding: 0;
   margin: 0;
   width: 100%;
-  max-width: 100%;
+  max-width: 100% !important;
   min-height: 100vh;
   overflow-x: hidden;
   margin-left: auto;
   margin-right: auto;
-}
-
-button {
-  font-weight: 600;
 }
 
 /* width */
@@ -99,7 +223,7 @@ button {
 /* Handle */
 ::-webkit-scrollbar-thumb {
   background: #ccc;
-  border-radius: 5px;
+  border-radius: 3px;
 }
 
 /* Handle on hover */

@@ -33,7 +33,7 @@ export default function ChatFull() {
             </div>
             <Link
               href={"/"}
-              className="mx-auto w-[236px] h-[46px] inline-flex items-center justify-center text-white rounded-[6px] bg-[--blue] font-[JetBrainsMono]"
+              className="mx-auto w-[236px] h-[46px] inline-flex items-center justify-center text-white rounded-[6px] bg-[--blue] font-[JetBrainsMono] !transition-all !duration-500 !ease-in-out hover:!bg-[--hoverblue]"
             >
               Return to Homepage
             </Link>

@@ -29,7 +29,7 @@ export default function ExpiredSession() {
               </h3>
               <Link
                 href={"https://messagemoment.com/5qjjc37f9sn"}
-                className="font-[JetBrainsMono] font-normal text-[15px] text-[--dark] text-center mb-[31px]"
+                className="font-[JetBrainsMono] font-[600] text-[15px] text-[--dark] text-center mb-[31px]"
               >
                 https://messagemoment.com/5qjjc37f9sn
               </Link>
@@ -39,7 +39,7 @@ export default function ExpiredSession() {
             </div>
             <Link
               href={"/"}
-              className="mx-auto w-[236px] h-[46px] inline-flex items-center justify-center text-white rounded-[6px] bg-[--blue] font-[JetBrainsMono]"
+              className="mx-auto w-[236px] h-[46px] inline-flex items-center justify-center text-white rounded-[6px] bg-[--blue] font-[JetBrainsMono] !transition-all !duration-500 !ease-in-out hover:!bg-[--hoverblue]"
             >
               Return to Homepage
             </Link>
