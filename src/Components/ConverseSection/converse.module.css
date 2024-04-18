@@ -1,16 +1,17 @@
 /* Converse Section Styles */
 .converseTitle {
-  flex-grow: 0;
-  margin: 0 0 20px;
-  font-family: DMSans;
-  font-size: 60px;
-  font-weight: bold;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.17;
-  letter-spacing: normal;
-  text-align: left;
-  color: #363c4f;
+    width: 576px;   
+    flex-grow: 0;
+    margin: 0 0 20px;
+    font-family: DMSans;
+    font-size: 60px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.17;
+    letter-spacing: normal;
+    text-align: left;
+    color: #363c4f;
 }
 
 .converseDesc {

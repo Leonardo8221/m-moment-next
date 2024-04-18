@@ -3,8 +3,8 @@ import styles from "./converse.module.css";
 
 const ConverseSection = () => {
   return (
-    <div className="flex items-center gap-[50px] justify-between p-[162px_142px_100px_172px] bg-gradient-to-b from-[#494af8]/10 to-transparent">
-      <div className="flex flex-col gap-[20px]">
+    <div className="flex items-center gap-[48px] justify-center p-[162px_142px_100px_172px] bg-gradient-to-b from-[#494af8]/10 to-transparent">
+      <div className="flex flex-col">
         <h2 className={styles.converseTitle}>
           Converse with ease and assurance
         </h2>
