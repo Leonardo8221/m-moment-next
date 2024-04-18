@@ -84,7 +84,7 @@ const Contact = () => {
           <p className='text-[17px] font-[500] text-center leading-[30px]'>
             Need answers or help? We might have answered your questons in our{' '}
             <span className='text-[--blue]'>
-              <Link href='/faq'>FAQs</Link>
+              <Link href='/faqs'>FAQs</Link>
             </span>
             . <br />
             Otherwise complete this form on the topic relevant to your query

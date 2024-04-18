@@ -38,7 +38,7 @@ export default function Maintenace() {
           </div>
         </div>
         <p className="font-medium font-[DMSans] text-[13px] leading-normal text-center text-[#555]">
-          Copyright © 2023 MessageMoment. All rights reserved.
+          Copyright © {new Date().getFullYear()} MessageMoment. All rights reserved.
         </p>
       </div>
     </div>

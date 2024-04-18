@@ -1,6 +1,7 @@
 import Image from "next/image";
 import styles from "./about.module.css";
 import { useRouter } from "next/router";
+import Link from "next/link";
 const About = () => {
   const router = useRouter();
 
@@ -178,7 +179,7 @@ const About = () => {
             If you have any questions, concerns, feedback or would like to
             <br />
             advertise with MessageMoment, please do not hesitate to{" "}
-            <u>Contact Us.</u>
+            <u><Link href={'/contact-us'}>Contact Us</Link></u>.
           </p>
           <div className="flex flex-col items-center">
             <div className="flex justify-center items-center gap-[20px] mb-[50px]">

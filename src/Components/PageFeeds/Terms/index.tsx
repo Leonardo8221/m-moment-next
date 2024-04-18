@@ -14,7 +14,7 @@ const Terms = () => {
         Terms and Conditions of Use
       </h1>
       <div className="w-[190px] h-[46px] mt-[48px] mb-[30px] pt-[10px] pb-[13px] text-center rounded-[6px] border border-gray-200 bg-white text-[--dark] font-[JetBrainsMono] text-[15px]">
-        April 1, 2023
+        July 1, 2024
       </div>
       <div className="w-full flex flex-col gap-[36px] border-b border-[#000]/10 pb-[33px] mb-[30px]">
         {terms.map((term, index) => (

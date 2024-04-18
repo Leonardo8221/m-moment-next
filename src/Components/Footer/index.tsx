@@ -26,13 +26,16 @@ const Footer = ({ items }: Ifooter) => {
       >
         <MdKeyboardArrowUp />
       </button>
-      <Image
-        width={196.5}
-        height={46}
-        src={"/img/Logo.svg"}
-        alt="logo"
-        className="mb-[50px] mx-auto"
-      />
+      <Link href={"/"}>
+        <Image
+          width={196.5}
+          height={46}
+          src={"/img/Logo.svg"}
+          alt="logo"
+          className="mb-[50px] mx-auto"
+        />
+      </Link>
+
       <ul className="flex items-center gap-[30px] mb-[50px] mx-auto w-fit">
         {items.map((item) => (
           <li key={item.href} className={styles.nav}>
@@ -42,7 +45,8 @@ const Footer = ({ items }: Ifooter) => {
       </ul>
       <div className="flex justify-between relative border-t border-black/1 px-[60px] items-center h-[89px]">
         <p className={styles.copyright}>
-          Copyright © {new Date().getFullYear()} MessageMoment. All rights reserved.
+          Copyright © {new Date().getFullYear()} MessageMoment. All rights
+          reserved.
         </p>
         <div className="absolute left-[50%] translate-x-[-50%] t-[31px]">
           <Socials />
