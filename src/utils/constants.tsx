@@ -76,11 +76,11 @@ export const terms = [
   },
   {
     title: "9. Entire Agreement",
-    desc: "These T&Cs, together with the Privacy Policy, constitute the entire agreement between you and MessageMoment relating to the use of the platform. If any provision of these T&Cs is found to be invalid or unenforceable, the remaining provisions shall remain in full force and effect.",
+    desc: "These T&Cs, together with the <a href='/privacy' className='text-[--blue] hover:underline'>Privacy Policy</a>, constitute the entire agreement between you and MessageMoment relating to the use of the platform. If any provision of these T&Cs is found to be invalid or unenforceable, the remaining provisions shall remain in full force and effect.",
   },
   {
     title: "10. Contact Us",
-    desc: "If you have any questions regarding these Terms and Conditions of Use, please Contact Us.",
+    desc: "If you have any questions regarding these Terms and Conditions of Use, please <a href='/contact-us' className='text-[--blue] hover:underline'>Contact Us</a>.",
   },
 ];
 
@@ -107,7 +107,7 @@ export const privacies = [
   },
   {
     title: "6. Contact Us",
-    desc: "If you have any questions regarding this Privacy Policy, please Contact Us.",
+    desc: "If you have any questions regarding this Privacy Policy, please <a href='/contact-us' className='text-[--blue] hover:underline'>Contact Us</a>.",
   },
 ];
 
@@ -195,6 +195,7 @@ export const CookieMap = [
     id: "003",
   },
 ];
+
 export const contactTopicOptions = [
   { label: "General Query", value: "general-query" },
   { label: "Support", value: "support" },
