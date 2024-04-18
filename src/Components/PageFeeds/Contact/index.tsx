@@ -90,7 +90,7 @@ const Contact = () => {
           <h1 className="text-[40px] font-bold mb-[28px]">Contact Us</h1>
           <p className="text-[17px] font-[500] text-center leading-[30px]">
             Need answers or help? We might have answered your questons in our{" "}
-            <span className="text-[--blue]">
+            <span className="text-[--blue] hover:underline">
               <Link href="/faqs">FAQs</Link>
             </span>
             . <br />
