@@ -141,7 +141,7 @@ const About = () => {
           </p>
         </div>
       </div>
-      <div className="w-full h-[600px] flex gap-[60px] text-[#363c4f] items-center justify-between p-[119px_172px_119px_170px] bg-gradient-to-b from-[#494af8]/10 to-transparent">
+      <div className="w-full h-[600px] flex gap-[60px] text-[#363c4f] items-center justify-center p-[119px_172px_119px_170px] bg-gradient-to-b from-[#494af8]/10 to-transparent">
         <div
           className={`flex flex-col text-left text-[#363c4f] ${styles.width_538}`}
         >
