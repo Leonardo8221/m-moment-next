@@ -59,9 +59,9 @@
 
 .discoverSection .discovers {
   width: 100%;
-  max-width: 1220px;
-  /* display: flex;
-  justify-content: space-between; */
+  display: flex;
+  gap: 20px;
+  justify-content: center;
 }
 
 .discoverSection .discovers .discover_item {
@@ -75,7 +75,6 @@
   border-radius: 20px;
   background-color: #fff;
   align-items: center;
-  margin: auto;
 }
 
 .discoverSection .discovers .discover_item img {

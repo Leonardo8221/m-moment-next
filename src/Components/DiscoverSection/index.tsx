@@ -1,35 +1,12 @@
 import Image from "next/image";
 import styles from "./discover.module.css";
-import Slider from 'react-slick';
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
 
 const DiscoverSection = () => {
-  var settings = {
-    dots: false,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 4,
-    slidesToScroll: 1,
-   
-    responsive: [
-      
-      {
-        breakpoint: 1380,
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 2,
-        },
-      },
-    ]
-  };
-
   return (
     <div className={styles.discoverSection}>
       <h1>Discover more from MessageMoment</h1>
       <div className={styles.discovers}>
-      <Slider {...settings}>
-      <div className={styles.discover_item}>
+        <div className={styles.discover_item}>
           <Image
             width={80}
             height={80}
@@ -38,7 +15,7 @@ const DiscoverSection = () => {
           />
           <span>Secure</span>
         </div>
-      <div className={styles.discover_item}>
+        <div className={styles.discover_item}>
           <Image
             width={80}
             height={80}
@@ -47,7 +24,7 @@ const DiscoverSection = () => {
           />
           <span>Secure</span>
         </div>
-      <div className={styles.discover_item}>
+        <div className={styles.discover_item}>
           <Image
             width={80}
             height={80}
@@ -56,7 +33,7 @@ const DiscoverSection = () => {
           />
           <span>Browser Based</span>
         </div>
-      <div className={styles.discover_item}>
+        <div className={styles.discover_item}>
           <Image
             width={80}
             height={80}
@@ -74,11 +51,6 @@ const DiscoverSection = () => {
             />
           </div>
         </div>
-      </Slider>
-        
-       
-        
-        
       </div>
       <h2>Use MessageMoment on any device via Browser1</h2>
       <div className={styles.devices}>
