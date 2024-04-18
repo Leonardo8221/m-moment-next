@@ -173,25 +173,35 @@ export const faqsData = [
     answer:
       "MessageMoment reserves the right to terminate or restrict your use of the platform at any time, with or without notice, for any or no reason, and without liability to you.",
   },
-  {
-    question:
-      "Who can I contact if I have any questions, concerns or feedback about MessageMoment?",
-    answer: "You can Contact Us to get in touch.",
-  },
 ];
 
 export const CookieMap = [
-  { label: "Strictly necessary cookies", expand: "These cookies are essential for the proper functioning of this website. Without these cookies, the website would not work properly.",id:"001" },
-  { label: "Performance and Analytics cookies", expand: "These cookies allow this website to remember the choices you have made in the past.",id:"002" },
-  { label: "Advertisement and Targeting cookies", expand: "These cookies collect information about how you use this website, which pages you visited and which links you clicked on. All of the data is anonymized and cannot be used to identify you.",id:"003" },
+  {
+    label: "Strictly necessary cookies",
+    expand:
+      "These cookies are essential for the proper functioning of this website. Without these cookies, the website would not work properly.",
+    id: "001",
+  },
+  {
+    label: "Performance and Analytics cookies",
+    expand:
+      "These cookies allow this website to remember the choices you have made in the past.",
+    id: "002",
+  },
+  {
+    label: "Advertisement and Targeting cookies",
+    expand:
+      "These cookies collect information about how you use this website, which pages you visited and which links you clicked on. All of the data is anonymized and cannot be used to identify you.",
+    id: "003",
+  },
 ];
-export const contactTopicOptions=[
-  {label:'General Query', value:'general-query'},
-  {label:'Support', value:'support'},
-  {label:'Feedback / Suggestions', value:'feedback'},
-  {label:'Data Privacy Concerns', value:'data-privacy'},
-  {label:'Legal Query', value:'legal-query'},
-  {label:'Advertising / Sponsorship Inquiries', value:'advertising'},
-  {label:'Press Inquiries', value:'press'},
-  {label:'Other Query', value:'other-query'},
-]
+export const contactTopicOptions = [
+  { label: "General Query", value: "general-query" },
+  { label: "Support", value: "support" },
+  { label: "Feedback / Suggestions", value: "feedback" },
+  { label: "Data Privacy Concerns", value: "data-privacy" },
+  { label: "Legal Query", value: "legal-query" },
+  { label: "Advertising / Sponsorship Inquiries", value: "advertising" },
+  { label: "Press Inquiries", value: "press" },
+  { label: "Other Query", value: "other-query" },
+];

@@ -154,11 +154,44 @@ function FAQ() {
                       </div>
                       {isItemExpanded(index) && (
                         <div className="p-[14px_28px] text-[15px] font-[JetBrainsMono] font-regular text-[#363C4F]">
-                          <p>{highlightQuery(item.answer)}</p>
+                          {highlightQuery(item.answer)}
                         </div>
                       )}
                     </div>
                   ))}
+                  {!searchValue && (
+                    <div className="border-b border-gray-300 mb-[16px] pb-[14px]">
+                      <div
+                        className={`flex items-center cursor-pointer text-[18px] font-[JetBrainsMono] font-medium ${
+                          isItemExpanded(12) ? "text-[--blue]" : "text-[--dark]"
+                        }`}
+                        onClick={() => handleToggleExpand(12)}
+                      >
+                        <MdChevronRight
+                          className={`mr-[9px] transform ${
+                            isItemExpanded(12) ? "rotate-90" : ""
+                          }`}
+                        />
+                        <p>
+                          {highlightQuery(
+                            "Who can I contact if I have any questions, concerns or feedback about MessageMoment?"
+                          )}
+                        </p>
+                      </div>
+                      {isItemExpanded(12) && (
+                        <div className="p-[14px_28px] text-[15px] font-[JetBrainsMono] font-regular text-[#363C4F]">
+                          You can{" "}
+                          <Link
+                            href={"/contact-us"}
+                            className="text-[--blue] hover:underline"
+                          >
+                            Contact Us
+                          </Link>{" "}
+                          to get in touch.
+                        </div>
+                      )}
+                    </div>
+                  )}
                 </>
               )}
             </div>
