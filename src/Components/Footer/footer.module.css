@@ -5,6 +5,9 @@
   text-align: center;
   color: #363c4f;
 }
+.nav:hover {
+  color: var(--blue);
+}
 
 .copyright {
   font-family: DMSans;

@@ -47,7 +47,7 @@ const Header = ({ items }: Iheader) => {
             <li key={item.href} className={styles.nav}>
               <Link
                 href={item.href}
-                className={`${
+                className={`hover:text-[--blue] ${
                   router.pathname === item.href
                     ? "text-[--blue]"
                     : "text-[#000]"
