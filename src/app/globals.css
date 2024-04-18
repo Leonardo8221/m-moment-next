@@ -82,6 +82,10 @@ body {
   margin-right: auto;
 }
 
+button {
+  font-weight: 600;
+}
+
 /* width */
 ::-webkit-scrollbar {
   width: 6px;

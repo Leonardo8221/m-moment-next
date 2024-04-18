@@ -9,8 +9,6 @@ import styles from "./hero.module.css";
 import { Turnstile } from "@marsidev/react-turnstile";
 import QRCode from "react-qr-code";
 import classNames from "classnames";
-import Tooltip from "../ui/ToolTip";
-import Cookies from "../Cookies";
 import Link from "next/link";
 
 const Hero = () => {

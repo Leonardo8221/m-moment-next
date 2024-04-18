@@ -21,7 +21,7 @@ const Footer = ({ items }: Ifooter) => {
     <div className="relative w-full flex-col text-center pt-[40px] bg-gradient-to-b from-[#494af8]/10 to-transparent">
       <button
         type="button"
-        className="cursor-pointer absolute w-[80px] h-[80px] flex items-center justify-center text-white text-[36px] font-[600] bg-[--blue] rounded-full border-[3px] border-white top-[-40px] right-[60px] !transition-all !duration-500 !ease-in-out hover:!bg-[--hoverblue]"
+        className="cursor-pointer absolute w-[80px] h-[80px] flex items-center justify-center text-white text-[36px] bg-[--blue] rounded-full border-[3px] border-white top-[-40px] right-[60px] !transition-all !duration-500 !ease-in-out hover:!bg-[--hoverblue]"
         onClick={scrollToTop}
       >
         <MdKeyboardArrowUp />
