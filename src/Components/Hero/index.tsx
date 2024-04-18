@@ -20,9 +20,11 @@ const Hero = () => {
   const [isCopied, setIsCopied] = useState(false);
   const [secCode, setSecCode] = useState("");
   const [flag, setFlag] = useState(false);
+  const [isLoaded, setIsLoaded] = useState(false);
+  const [regenerated, setRegenerated] = useState(false);
+
   const qrCodeRef = useRef<HTMLDivElement>(null);
   const regenRef = useRef<HTMLButtonElement>(null);
-
   const handleItemClick = (option: {
     value?: string;
     label: any;
@@ -40,7 +42,7 @@ const Hero = () => {
       setIsCopied(true);
       setTimeout(() => {
         setIsCopied(false);
-      }, 2000); // Optional: Reset state after 2 seconds
+      }, 1000); // Optional: Reset state after 2 seconds
     } catch (err) {
       console.error("Failed to copy text: ", err);
     }
@@ -79,11 +81,19 @@ const Hero = () => {
     setIsOpen(false);
     setRandUrl(generateRandomUrl());
     setSecCode(generateRandomSecCode());
+    setRegenerated(true);
+    setTimeout(() => {
+      setRegenerated(false);
+    }, 1000);
   };
 
   useEffect(() => {
     function handleOutsideClick(event) {
-      if (flag && !qrCodeRef.current?.contains(event.target) && !regenRef.current?.contains(event.target))
+      if (
+        flag &&
+        !qrCodeRef.current?.contains(event.target) &&
+        !regenRef.current?.contains(event.target)
+      )
         setFlag(false);
     }
     document.addEventListener("mousedown", handleOutsideClick);
@@ -91,7 +101,6 @@ const Hero = () => {
       document.removeEventListener("mousedown", handleOutsideClick);
     };
   }, [flag]);
-  
 
   return (
     <div className="bg-gradient-to-b from-[#494af8]/10 to-transparent p-[50px_60px]">
@@ -149,9 +158,7 @@ const Hero = () => {
                 <div className="flex gap-[5px]">
                   <button
                     className={classNames(
-                      `inline-flex items-center justify-center bg-white/10 border border-white text-white disabled:border-white/20 disabled:text-white/20 rounded-[5px] w-[50px] h-[50px] ${
-                        randUrl ? "" : "disabled"
-                      }`,
+                      `inline-flex items-center justify-center bg-white/10 border border-white text-white disabled:border-white/20 disabled:text-white/20 rounded-[5px] w-[50px] h-[50px] tansition-all duration-500 ease-in-out hover:!bg-[--hoverblue]`,
                       styles.tooltip
                     )}
                     disabled={randUrl ? false : true}
@@ -160,7 +167,9 @@ const Hero = () => {
                     ref={regenRef}
                   >
                     <BsArrowRepeat fontSize={26} />
-                    <span className={styles.tooltip_text}>Regenerate</span>
+                    <span className={styles.tooltip_text}>
+                      {regenerated ? "Regenerated" : "Regenerate"}
+                    </span>
                   </button>
                   <button
                     className={classNames(
@@ -192,7 +201,6 @@ const Hero = () => {
                     <div
                       className="absolute top-[-178px] z-10 right-[-30px] items-center justify-center max-maxTab:hidden"
                       ref={qrCodeRef}
-                      
                     >
                       <div className="relative rounded-[10px] w-[full] bg-white bg-cover bg-no-repeat p-[20px] w-full border-[10px] border-black">
                         <Image
@@ -224,11 +232,13 @@ const Hero = () => {
                 <Turnstile
                   siteKey="1x00000000000000000000AA"
                   className="w-full"
+                  onSuccess={() => setIsLoaded(true)}
                 />
                 <button
                   type="button"
-                  className="bg-white rounded-[6px] inline-flex items-center justify-center text-center font-[JetBrainsMono] text-[15px] text-[--blue] w-full h-[65px]"
+                  className="bg-white rounded-[6px] inline-flex items-center hover:text-[#4848a4] justify-center text-center font-[JetBrainsMono] text-[15px] text-[--blue] w-full h-[65px] disabled:text-[#eee]"
                   onClick={handleGenLink}
+                  disabled={!isLoaded}
                 >
                   {randUrl ? "Open Chat" : "Generate Link"}
                 </button>

@@ -121,7 +121,7 @@ const About = () => {
         <button
           type="button"
           onClick={handleTryMessagMoment}
-          className="w-[315px] h-[46px] inline-flex items-center justify-center text-white bg-[--blue] font-[JetBrainsMono] text-[15px] font-[700] text-center rounded-[5px]"
+          className="w-[315px] h-[46px] inline-flex items-center justify-center text-white bg-[--blue] font-[JetBrainsMono] text-[15px] font-[700] text-center rounded-[5px] !transition-all !duration-500 !ease-in-out hover:!bg-[--hoverblue]"
         >
           Try MessageMoment
         </button>

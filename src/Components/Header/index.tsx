@@ -62,7 +62,7 @@ const Header = ({ items }: Iheader) => {
       <div className="flex gap-[29.5px] items-center">
         <Socials />
         <button
-          className="inline-flex items-center justify-center bg-[--blue] rounded-[6px] text-white w-[150px] h-[46px] hover:opacity-4"
+          className="inline-flex items-center justify-center bg-[--blue] rounded-[6px] text-white w-[150px] h-[46px] !transition-all !duration-500 !ease-in-out hover:!bg-[--hoverblue]"
           type="button"
           onClick={navigateToHomeSection}
         >
