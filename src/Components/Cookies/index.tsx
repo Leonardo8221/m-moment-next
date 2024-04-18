@@ -24,8 +24,8 @@ const Cookies = () => {
   useEffect(() => {
     const isCookieAccepted = getCookie(cookieName) === "true";
     const isCookieRejected = getCookie(cookieName) === "false";
-
-    if (!isCookieAccepted && !isCookieRejected) {
+    
+    if (!isCookieAccepted) {
       setIsOpenCookieModal(true);
     } else {
       setIsOpenCookieModal(false);
@@ -79,13 +79,13 @@ const Cookies = () => {
           </p>
           <div className="flex items-center justify-between gap-4 w-full px-2">
             <button
-              className="bg-[--blue] w-full h-[46px] py-2 px-4 rounded-md text-white"
+              className="bg-[--blue] w-full h-[46px] py-2 px-4 rounded-md text-white !transition-all !duration-500 !ease-in-out hover:!bg-[--hoverblue]"
               onClick={handleAcceptAllCookies}
             >
               Accept all
             </button>
             <button
-              className="bg-[#F5F5F6] py-2 w-full h-[46px] px-4 rounded-md text-black"
+              className="bg-[#F5F5F6] py-2 w-full h-[46px] px-4 rounded-md text-black !transition-all !duration-500 !ease-in-out hover:!bg-[#363c4f29]"
               onClick={handleRejectAllCookies}
             >
               Reject all

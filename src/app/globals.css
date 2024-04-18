@@ -8,6 +8,7 @@
   --white: #fff;
   --dark: #363c4f;
   --blue: #494af8;
+  --hoverblue: #4243df;
   --dark-gray: #555;
   --light-gray: #ccc;
   --gradient: linear-gradient(to bottom, var(--blue), rgba(73, 74, 248, 0));
