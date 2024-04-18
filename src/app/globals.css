@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
 :root {
   --black: #000;
   --white: #fff;
@@ -13,7 +12,6 @@
   --light-gray: #ccc;
   --gradient: linear-gradient(to bottom, var(--blue), rgba(73, 74, 248, 0));
 }
-
 
 @font-face {
   font-family: DMSans;
@@ -45,7 +43,8 @@
 @font-face {
   font-family: JetBrainsMono;
   src: local(JetBrainsMono-Regular),
-    url("../assets/fonts/JetBrains_Mono/static/JetBrainsMono-Regular.ttf") format("truetype");
+    url("../assets/fonts/JetBrains_Mono/static/JetBrainsMono-Regular.ttf")
+      format("truetype");
   font-weight: normal;
   font-style: normal;
   font-stretch: normal;
@@ -54,7 +53,8 @@
 @font-face {
   font-family: JetBrainsMono;
   src: local(JetBrainsMono-Medium),
-    url("../assets/fonts/JetBrains_Mono/static/JetBrainsMono-Medium.ttf") format("truetype");
+    url("../assets/fonts/JetBrains_Mono/static/JetBrainsMono-Medium.ttf")
+      format("truetype");
   font-weight: 500;
   font-style: normal;
   font-stretch: normal;
@@ -63,142 +63,11 @@
 @font-face {
   font-family: JetBrainsMono;
   src: local(JetBrainsMono-Bold),
-    url("../assets/fonts/JetBrains_Mono/static/JetBrainsMono-Bold.ttf") format("truetype");
+    url("../assets/fonts/JetBrains_Mono/static/JetBrainsMono-Bold.ttf")
+      format("truetype");
   font-weight: bold;
   font-style: normal;
   font-stretch: normal;
-}
-html,body{
-  max-width: 100% !important;
-}
-h1 {
-  font-family: DMSans;
-  font-size: 80px;
-  font-weight: bold;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1;
-  letter-spacing: -2px;
-}
-
-h2 {
-  font-family: DMSans;
-  font-size: 60px;
-  font-weight: bold;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.17;
-  letter-spacing: normal;
-}
-
-h3 {
-  font-family: DMSans;
-  font-size: 40px;
-  font-weight: bold;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: normal;
-  letter-spacing: normal;
-}
-
-h4 {
-  font-family: DMSans;
-  font-size: 26px;
-  font-weight: bold;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: normal;
-  letter-spacing: normal;
-}
-
-h5 {
-  font-family: JetBrainsMono;
-  font-size: 20px;
-  font-weight: 500;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: normal;
-  letter-spacing: normal;
-}
-
-h6 {
-  font-family: JetBrainsMono;
-  font-size: 18px;
-  font-weight: 500;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: normal;
-  letter-spacing: normal;
-}
-
-.P3 {
-  font-family: DMSans;
-  font-size: 17px;
-  font-weight: 500;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.41;
-  letter-spacing: normal;
-}
-
-.H7 {
-  font-family: JetBrainsMono;
-  font-size: 17px;
-  font-weight: 500;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: normal;
-  letter-spacing: normal;
-}
-
-.P1 {
-  font-family: DMSans;
-  font-size: 17px;
-  font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.41;
-  letter-spacing: normal;
-}
-
-button {
-  font-family: JetBrainsMono;
-  font-size: 15px;
-  font-weight: bold;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: normal;
-  letter-spacing: normal;
-}
-
-.P2 {
-  font-family: JetBrainsMono;
-  font-size: 15px;
-  font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.53;
-  letter-spacing: normal;
-}
-
-.N1 {
-  font-family: DMSans;
-  font-size: 13px;
-  font-weight: 500;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: normal;
-  letter-spacing: normal;
-}
-
-.N2 {
-  font-family: JetBrainsMono;
-  font-size: 13px;
-  font-weight: 500;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: normal;
-  letter-spacing: normal;
 }
 
 html,
@@ -206,24 +75,13 @@ body {
   padding: 0;
   margin: 0;
   width: 100%;
-  max-width: 1440px;
+  max-width: 100%;
   min-height: 100vh;
   overflow-x: hidden;
   margin-left: auto;
   margin-right: auto;
 }
-.slick-next:before,.slick-prev:before {
- 
-  background-size: contain;
-  background-repeat: no-repeat;
-  color: transparent !important;
-}
-.slick-next:before{
-  background-image: url('../../public/img/icons/right-arrow.svg');
-}
-.slick-prev::before{
-  background-image: url('../../public/img/icons/left-arrow.svg');
-}
+
 /* width */
 ::-webkit-scrollbar {
   width: 6px;
@@ -245,42 +103,52 @@ body {
   background: #b0b0b0;
 }
 
-.page-title{
-  font-size: 40px ;
+.page-title {
+  font-size: 40px;
 }
-.policy-heading{
-  font-size: 26px ;
+
+.policy-heading {
+  font-size: 26px;
 }
-.font-15{
+
+.font-15 {
   font-size: 15px;
 }
-.rotate--90{
+
+.rotate--90 {
   transform: rotate(-90deg);
 }
+
 .contacUS-form input::placeholder,
 textarea::placeholder {
   font-family: JetBrainsMono;
 }
-.contacUS-form .border-b-red-500  {
+
+.contacUS-form .border-b-red-500 {
   border-bottom: 2px solid rgba(235, 87, 87, 1);
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
 }
-.contacUS-form .css-1hr6uc-control,.contacUS-form .css-1npzrp-control{
+
+.contacUS-form .css-1hr6uc-control,
+.contacUS-form .css-1npzrp-control {
   border-bottom: 2px solid rgba(235, 87, 87, 1) !important;
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
 }
-.contacUS-form .text-red-500{
+
+.contacUS-form .text-red-500 {
   color: rgba(235, 87, 87, 1);
   opacity: 1;
 }
-.message-sent-modal{
+
+.message-sent-modal {
   top: 0;
   bottom: 0;
   margin: auto;
 }
-.clickable-overlay{
+
+.clickable-overlay {
   position: fixed;
   top: 0;
   left: 0;
