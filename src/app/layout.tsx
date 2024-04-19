@@ -5,7 +5,7 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "404 - Page Not Found",
+  title: "MessageMoment - The real meaning to personal!",
 };
 
 export default function RootLayout({
