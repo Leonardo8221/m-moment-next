@@ -75,7 +75,7 @@ const Cookies = () => {
               }}
             >
               Let me choose
-            </span>
+            </span>.
           </p>
           <div className="flex items-center justify-between gap-4 w-full px-2">
             <button
