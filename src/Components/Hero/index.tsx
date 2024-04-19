@@ -234,7 +234,7 @@ const Hero = () => {
                 />
                 <button
                   type="button"
-                  className="bg-white rounded-[6px] inline-flex items-center hover:text-[#4848a4] justify-center text-center font-[JetBrainsMono] text-[15px] text-[--blue] w-full h-[65px] disabled:text-[#eee]"
+                  className="bg-white rounded-[6px] inline-flex items-center hover:text-[#4848a4] justify-center text-center font-[JetBrainsMono] text-[15px] text-[--blue] w-full h-[65px] disabled:text-[#ccc]"
                   onClick={handleGenLink}
                   disabled={!isLoaded}
                 >
