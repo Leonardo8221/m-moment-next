@@ -11,7 +11,7 @@ export default function NotFound() {
   return (
     <>
       <Head>
-        <title>404 - Page Not Found {pathName} (404)</title>
+        <title>404 - Page Not Found</title>
       </Head>
       <div className="flex flex-col h-[100vh]">
         <div className="flex justify-center border-t-[5px] border-t-[--blue] p-[17px_60px] border-b border-b-black/5">
