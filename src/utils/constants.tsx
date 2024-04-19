@@ -113,7 +113,7 @@ export const privacies = [
 
 export const faqsData = [
   {
-    question: "What is MessageMoment",
+    question: "What is MessageMoment?",
     answer:
       "MessageMoment is a discreet chat service that enables known parties to communicate with each other through a unique chat link.",
   },
