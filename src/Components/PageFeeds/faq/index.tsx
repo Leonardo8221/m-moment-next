@@ -121,7 +121,7 @@ function FAQ() {
                       No results found
                     </h4>
                     <p className="font-[JetBrainsMono] text-[--dark] text-[15px] font-normal text-center">
-                      We couldn’t find a match for “advertisement”. Please try
+                      We couldn’t find a match for “{searchValue}”. Please try
                       another keyword.
                     </p>
                   </div>
@@ -216,7 +216,7 @@ function FAQ() {
             </p>
             <Link
               href="/contact-us"
-              className="inline-flex items-center justify-center font-[500] bg-[--blue] rounded-[6px] text-white w-[236px] h-[46px] hover:opacity-4"
+              className="inline-flex items-center font-[JetBrainsMono] text-[15px] justify-center font-[600] bg-[--blue] rounded-[6px] text-white w-[236px] h-[46px] !transition-all !duration-500 !ease-in-out hover:!bg-[--hoverblue]"
             >
               Contact Us
             </Link>

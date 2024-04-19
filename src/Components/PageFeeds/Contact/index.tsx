@@ -26,7 +26,7 @@ const Contact = () => {
   const [remainingWordCount, setRemainingWordCount] = useState<number>(1500);
 
   const onSubmit = (data: ContactUseFormValues) => {
-    setmessageSent(true)
+    setmessageSent(true);
     console.log("Form submitted", data);
   };
   const customStyles = {
@@ -55,11 +55,10 @@ const Contact = () => {
         border: "1px solid rgba(0 0 0 / 0.1)",
         boxShadow: "none",
       },
-      
     }),
     placeholder: (provided) => ({
       ...provided,
-      color: errors.topic?.message ? '#EB5757' : 'grey'
+      color: errors.topic?.message ? "#EB5757" : "grey",
     }),
     valueContainer: (provided) => ({
       ...provided,
@@ -84,8 +83,9 @@ const Contact = () => {
     },
   };
   return (
-    <>
-      <div className="relative bg-gradient-to-b from-[#494af8]/10 to-transparent w-full h-[700px] flex flex-col items-center p-[51px_172px]">
+    <div className="relative">
+      <div className="absolute top-0 left-0 z-[-1] bg-gradient-to-b from-[#494af8]/10 to-transparent w-full h-[700px]"></div>
+      <div className="flex flex-col items-center p-[51px_172px_140px_172px]">
         <Image
           width={128}
           height={128}
@@ -93,7 +93,7 @@ const Contact = () => {
           alt=""
           className="max-auto mb-[30px]"
         />
-        <div className="font-[DMSans] text-[--dark] w-full flex flex-col justify-center items-center">
+        <div className="font-[DMSans] text-[--dark] w-full flex flex-col justify-center items-center mb-[30px]">
           <h1 className="text-[40px] font-bold mb-[28px]">Contact Us</h1>
           <p className="text-[17px] font-[500] text-center leading-[30px]">
             Need answers or help? We might have answered your questons in our{" "}
@@ -104,7 +104,7 @@ const Contact = () => {
             Otherwise complete this form on the topic relevant to your query
           </p>
         </div>
-        <div className="absolute w-[1096px] h-[750px] top-[377px] left-[50%] translate-x-[-50%] flex bg-white border border-black/10 rounded-[10px] p-[50px_111px_39px_111px]">
+        <div className="w-full flex bg-white border border-black/10 rounded-[10px] p-[50px_111px_39px_111px]">
           <form
             className="w-full font-[DMSans] text-[--dark] font-[500] contacUS-form"
             onSubmit={handleSubmit(onSubmit)}
@@ -177,9 +177,7 @@ const Contact = () => {
                     placeholder={"Select"}
                     options={contactTopicOptions}
                     className={`block mb-[10px] !text-[JetBrainsMono] text-[15px] ${
-                      errors.topic?.message
-                        ? "border-b-red-500"
-                        : ""
+                      errors.topic?.message ? "border-b-red-500" : ""
                     }`}
                   />
                 )}
@@ -225,7 +223,7 @@ const Contact = () => {
               />
               <button
                 type="submit"
-                disabled={!isSuccess}
+                disabled={!isValid}
                 className="w-[236px] h-[46px] inline-flex items-center justify-center text-white rounded-[6px] bg-[--blue] font-[JetBrainsMono] disabled:bg-[#ccc] !transition-all !duration-500 !ease-in-out hover:!bg-[--hoverblue]"
               >
                 Send
@@ -271,9 +269,7 @@ const Contact = () => {
           </>
         )}
       </div>
-
-      <div className="w-full bg-white h-[567px]"></div>
-    </>
+    </div>
   );
 };
 
