@@ -166,6 +166,7 @@ const Modal = ({ onClose, cookieName }: any) => {
                             viewBox="0 0 55 24"
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
+                            className="cursor-pointer"
                           >
                             <rect
                               opacity="0.6"
@@ -190,6 +191,7 @@ const Modal = ({ onClose, cookieName }: any) => {
                             viewBox="0 0 55 24"
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
+                            className="cursor-pointer"
                           >
                             <rect
                               width="55"
