@@ -216,7 +216,7 @@ function FAQ() {
             </p>
             <Link
               href="/contact-us"
-              className="inline-flex items-center justify-center font-bold bg-[--blue] rounded-[6px] text-white w-[236px] h-[46px] hover:opacity-4"
+              className="inline-flex items-center justify-center font-[500] bg-[--blue] rounded-[6px] text-white w-[236px] h-[46px] hover:opacity-4"
             >
               Contact Us
             </Link>
