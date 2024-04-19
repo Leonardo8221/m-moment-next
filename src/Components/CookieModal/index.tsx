@@ -112,7 +112,7 @@ const Modal = ({ onClose, cookieName }: any) => {
               relative to cookies and other sensitive data, please read the
               full&nbsp;
               <span className="underline cursor-pointer">
-                <Link href="/privacy">Privacy Policy</Link>
+                <Link href="/privacy" target="_blank">Privacy Policy</Link>
               </span>
               .
             </p>
@@ -247,7 +247,7 @@ const Modal = ({ onClose, cookieName }: any) => {
               For any queries in relation to our policy on cookies and your
               choices, please&nbsp;
               <span className="underline cursor-pointer">
-                <Link href="/contact-us">Contact Us</Link>
+                <Link href="/contact-us" target="_blank">Contact Us</Link>
               </span>.
             </p>
           </div>
