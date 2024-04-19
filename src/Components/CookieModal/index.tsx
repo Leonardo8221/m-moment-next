@@ -65,7 +65,7 @@ const Modal = ({ onClose, cookieName }: any) => {
   return (
     <div className={`w-[690px] h-[670x] ${styles.cookieModal}`}>
       <div className="clickable-overlay" onClick={onClose}></div>
-      <div className="p-5 px-0 rounded-[10px] h-full bg-white cursor-pointer relative">
+      <div className="p-5 px-0 rounded-[10px] h-full bg-white relative">
         <div className={`relative -top-[40px] ${styles.cookieTitle}`}>
           <Image
             src={"/cookies_icon.svg"}
@@ -123,7 +123,7 @@ const Modal = ({ onClose, cookieName }: any) => {
                 key={index}
                 className={`font-[JetBrainsMono] text-[15px] text-[#363c4f] ${styles.accorItems}`}
               >
-                <div className="flex items-center cursor-pointer">
+                <div className="flex items-center">
                   <div className=" flex w-5/6 items-center">
                     <IoIosArrowDown
                       className={`mr-2 transform ${

@@ -64,6 +64,7 @@
 }
 .accorItems .label {
  margin: 0;
+ cursor: pointer;
 }
 .infoSection{
   width: 100%;

@@ -38,7 +38,7 @@
 }
 
 .dropdownItem:first-child {
-  padding: 11px 31px 11px 13px;
+  padding: 8px 31px 8px 13px;
   height: 46px;
   border: solid 1px #ddd0;
   border-top: none;
@@ -49,7 +49,8 @@
   border-bottom-color: #ddd;
 }
 
-.dropdownItem:last-child {padding: 11px 31px 11px 13px;
+.dropdownItem:last-child {
+  padding: 8px 31px 8px 13px;
   height: 46px;
   border: solid 1px #ddd0;
   border-top: none;
