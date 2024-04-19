@@ -198,7 +198,7 @@ function FAQ() {
           </div>
         </div>
 
-        <div className="flex py-[126px] px-[172px] w-full relative w-full h-[600px]">
+        <div className="flex items-center px-[172px] relative w-full h-[600px]">
           <div className="absolute w-[404px] h-[404px] top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] pt-[88px] px-[87px] pb-[41px] bg-[#494af8]/50 filter blur-[100px] z-0"></div>
           <div className="relative w-full h-[350px] z-10 flex pt-[117px] items-center flex-col bg-white rounded-[10px] border border-black/10">
             <Image

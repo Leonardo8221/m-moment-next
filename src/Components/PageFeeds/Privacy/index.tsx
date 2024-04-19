@@ -8,7 +8,7 @@ const MarkdownPreview = dynamic(
 
 const Privacy = () => {
   return (
-    <div className="w-full flex flex-col text-left pt-[51px] pb-[143px] px-[172px] bg-gradient-to-b from-[#494af8]/10 to-transparent">
+    <div className="w-full h-[1180px] flex flex-col text-left pt-[51px] px-[172px] bg-gradient-to-b from-[#494af8]/10 to-transparent">
       <h1 className="font-[DMSans] page-title font-bold leading-normal tracking-normal text-left text-[--dark] m-0">
         Privacy Policy
       </h1>

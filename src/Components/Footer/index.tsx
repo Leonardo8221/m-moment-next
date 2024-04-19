@@ -18,7 +18,7 @@ const Footer = ({ items }: Ifooter) => {
   };
 
   return (
-    <div className="relative w-full flex-col text-center pt-[40px] bg-gradient-to-b from-[#494af8]/10 to-transparent">
+    <div className="relative w-full !h-[300px] flex flex-col items-center text-center pt-[40px] bg-gradient-to-b from-[#494af8]/10 to-transparent">
       <button
         type="button"
         className="cursor-pointer absolute w-[80px] h-[80px] flex items-center justify-center text-white text-[36px] bg-[--blue] rounded-full border-[3px] border-white top-[-40px] right-[60px] !transition-all !duration-500 !ease-in-out hover:!bg-[--hoverblue]"
@@ -26,13 +26,13 @@ const Footer = ({ items }: Ifooter) => {
       >
         <MdKeyboardArrowUp />
       </button>
-      <Link href={"/"}>
+      <Link href={"/"} className="w-fit">
         <Image
           width={196.5}
           height={46}
           src={"/img/Logo.svg"}
           alt="logo"
-          className="mb-[50px] mx-auto"
+          className="mb-[50px]"
         />
       </Link>
 
@@ -43,7 +43,7 @@ const Footer = ({ items }: Ifooter) => {
           </li>
         ))}
       </ul>
-      <div className="flex justify-between relative border-t border-black/1 px-[60px] items-center h-[89px]">
+      <div className="flex w-full justify-between relative border-t border-black/1 px-[60px] items-center h-[89px]">
         <p className={styles.copyright}>
           Copyright © {new Date().getFullYear()} MessageMoment. All rights
           reserved.

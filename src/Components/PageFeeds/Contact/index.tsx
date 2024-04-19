@@ -6,6 +6,7 @@ import { Turnstile } from "@marsidev/react-turnstile";
 import Image from "next/image";
 import { Controller, useForm } from "react-hook-form";
 import Select from "react-select";
+
 type ContactUseFormValues = {
   firstName: string;
   lastName: string;
@@ -13,6 +14,7 @@ type ContactUseFormValues = {
   topic: { label: string; value: string };
   query: string;
 };
+
 const Contact = () => {
   const [messageSent, setmessageSent] = useState<boolean | null>(false);
   const [isSuccess, setIsSuccess] = useState<boolean>(false);
@@ -44,8 +46,8 @@ const Contact = () => {
       ...provided,
       padding: "1rem",
       border: "1px solid rgba(0 0 0 / 0.1)",
-      borderBottom: errors.topic?.message && "1px solid red",
-      borderRadius: "6px",
+      // borderBottom: errors.topic?.message && "2px solid red",
+      borderRadius: errors.topic?.message ? "6px 6px 0 0" : "6px",
       fontSize: "15px",
       cursor: "pointer",
       boxShadow: "none",
@@ -53,6 +55,11 @@ const Contact = () => {
         border: "1px solid rgba(0 0 0 / 0.1)",
         boxShadow: "none",
       },
+      
+    }),
+    placeholder: (provided) => ({
+      ...provided,
+      color: errors.topic?.message ? '#EB5757' : 'grey'
     }),
     valueContainer: (provided) => ({
       ...provided,
@@ -169,7 +176,11 @@ const Contact = () => {
                     classNamePrefix={"topicSelect "}
                     placeholder={"Select"}
                     options={contactTopicOptions}
-                    className={"block mb-[10px] !text-[JetBrainsMono] text-[15px]"}
+                    className={`block mb-[10px] !text-[JetBrainsMono] text-[15px] ${
+                      errors.topic?.message
+                        ? "border-b-red-500"
+                        : ""
+                    }`}
                   />
                 )}
                 {...register("topic", {
