@@ -53,14 +53,12 @@ const Footer = ({ items }: Ifooter) => {
         </div>
         <div className="flex gap-[10px] items-center">
           <p className={styles.designedBy}>Designed By</p>
-          <Link href={"mailto:pictagroup@gmail.com"} target="_blank" className="flex items-center !h-[16px]">
-            <Image
-              width={16}
-              height={16}
-              src={"/img/email-Icon.svg"}
-              alt={"logo"}
-            />
-          </Link>
+          <Image
+            width={16}
+            height={16}
+            src={"/img/email-Icon.svg"}
+            alt={"logo"}
+          />
         </div>
       </div>
     </div>
