@@ -147,7 +147,7 @@ const Contact = () => {
               <label className="block mb-[10px] text-lg">Email Address*</label>
               <input
                 type="email"
-                placeholder="Enter your Email Address"
+                placeholder="Enter your email address"
                 className={`p-[17px_20px] outline-none placeholder-[--dark]/30 w-full h-[60px] text-[JetBrainsMono] text-[15px] rounded-[6px] border border-black/10 ${
                   errors.email?.message
                     ? "border-b-red-500 placeholder:text-red-400"
@@ -224,7 +224,7 @@ const Contact = () => {
               <button
                 type="submit"
                 disabled={!isValid}
-                className="w-[236px] h-[46px] inline-flex items-center justify-center text-white rounded-[6px] bg-[--blue] font-[JetBrainsMono] disabled:bg-[#ccc] !transition-all !duration-500 !ease-in-out hover:!bg-[--hoverblue]"
+                className="w-[236px] h-[46px] inline-flex items-center justify-center text-white rounded-[6px] bg-[--blue] font-[JetBrainsMono] disabled:bg-[#ccc] !transition-all !duration-500 !ease-in-out disabled:pointer-events-none hover:!bg-[--hoverblue]"
               >
                 Send
               </button>

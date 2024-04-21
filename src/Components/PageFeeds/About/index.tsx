@@ -114,9 +114,9 @@ const About = () => {
           <br />
           responsive design, you can chat on the go, without leaving a trace. It
           never happened! Our
-          <br /> unique security features include the option to &rdquo;Make
-          Secure,&rdquo; by sharing a token password,
-          <br /> ensuring that only those you invite can enter the chat.
+          <br /> unique security features include the option to generate a
+          security code, <br />
+          ensuring that only those you invite can enter the chat.
         </p>
         <button
           type="button"
@@ -179,7 +179,10 @@ const About = () => {
             If you have any questions, concerns, feedback or would like to
             <br />
             advertise with MessageMoment, please do not hesitate to{" "}
-            <u><Link href={'/contact-us'}>Contact Us</Link></u>.
+            <u>
+              <Link href={"/contact-us"}>Contact Us</Link>
+            </u>
+            .
           </p>
           <div className="flex flex-col items-center">
             <div className="flex justify-center items-center gap-[20px] mb-[50px]">
@@ -203,13 +206,13 @@ const About = () => {
               />
             </div>
             <p className="font-[JetBrainsMono] text-[13px] text-[#777] text-center w-[883px]">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam
-              quis nibh id nunc commodo scelerisque. Donec neque justo,
-              hendrerit quis laoreet sed, consectetur vitae enim. Vestibulum
-              elementum urna eu lectus feugiat laoreet. Donec tincidunt libero
-              et urna laoreet accumsan. Curabitur at porta lectus, eget maximus
-              neque. Nulla pellentesque nunc turpis, id interdum lacus consequat
-              non. Donec nec placerat augue, nec vehicula metus.
+              Enjoy secure, text-based command-driven chats with MessageMoment.
+              Our platform also offers robust features for seamless project
+              collaboration. Leverage our partnership with FileMoment, our
+              sister platform specializing in secure file sharing, to easily
+              exchange files and documents within your chat sessions. With
+              simple commands and encrypted communication, your projects remain
+              confidential and accessible only to authorized collaborators.
             </p>
           </div>
         </div>

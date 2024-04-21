@@ -49,6 +49,7 @@ const Terms = () => {
             href={
               "https://www.flaticon.com/authors/basic-sheer/flat/8?author_id=1&type=standard"
             }
+            target="_blank"
             className="font-[JetBrainsMono] text-base leading-6 tracking-normal text-justify text-[--dark]"
           >
             https://www.flaticon.com/authors/basic-sheer/flat/8?author_id=1&type=standard
@@ -62,6 +63,7 @@ const Terms = () => {
             href={
               'https://www.freepik.com/free-vector/digital-device-mockup_4168605.htm#query=multi%20device%20mockup&position=23&from_view=search&track=ais"'
             }
+            target="_blank"
             className="font-[JetBrainsMono] text-base leading-6 tracking-normal text-justify text-[--dark]"
           >
             https://www.freepik.com/free-vector/digital-device-mockup_4168605.htm#query=multi%20device%20mockup&position=23&from_view=search&track=ais&rdquo;

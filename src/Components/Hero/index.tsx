@@ -100,6 +100,10 @@ const Hero = () => {
     };
   }, [flag]);
 
+  useEffect(() => {
+    setRandUrl("");
+  }, []);
+  
   return (
     <div className="bg-gradient-to-b from-[#494af8]/10 to-transparent p-[50px_60px]">
       <div className="w-full relative h-[700px] rounded-[20px] bg-[url('/img/AdobeStock_205129152.svg')] bg-cover">
@@ -244,11 +248,15 @@ const Hero = () => {
               <p className="font-[DMSans] text-[13px] text-white text-center m-0">
                 By starting this chat session, you agree to our{" "}
                 <u>
-                  <Link href={"/terms"} target="_blank">Terms of Use</Link>
+                  <Link href={"/terms"} target="_blank">
+                    Terms of Use
+                  </Link>
                 </u>{" "}
                 and{" "}
                 <u>
-                  <Link href={"/privacy"} target="_blank">Privacy Policy</Link>
+                  <Link href={"/privacy"} target="_blank">
+                    Privacy Policy
+                  </Link>
                 </u>
                 , and that you and everybody you share the chat link with is
                 above 16 years of age.
