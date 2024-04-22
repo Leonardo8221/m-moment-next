@@ -26,7 +26,7 @@ const Footer = ({ items }: Ifooter) => {
       >
         <MdKeyboardArrowUp />
       </button>
-      <Link href={"/"} className="w-fit">
+      <a href={"/"} className="w-fit">
         <Image
           width={196.5}
           height={46}
@@ -34,7 +34,7 @@ const Footer = ({ items }: Ifooter) => {
           alt="logo"
           className="mb-[50px]"
         />
-      </Link>
+      </a>
 
       <ul className="flex items-center gap-[30px] mb-[50px] mx-auto w-fit">
         {items.map((item) => (

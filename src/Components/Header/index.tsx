@@ -39,9 +39,9 @@ const Header = ({ items }: Iheader) => {
   return (
     <div className="fixed top-0 w-full z-50 bg-white flex justify-between border-t-[5px] border-t-[--blue] p-[17px_60px] border-b border-b-black/5">
       <div className="flex gap-[50px]">
-        <Link href={"/"}>
+        <a href={"/"} >
           <Image width={196.5} height={46} src={"/img/Logo.svg"} alt="logo" />
-        </Link>
+        </a>
         <ul className="flex items-center gap-[30px]">
           {items.slice(0, 2).map((item) => (
             <li key={item.href} className={styles.nav}>
